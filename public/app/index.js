@@ -23,7 +23,7 @@ class AppContainer extends HTMLElement {
         var _a;
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML += `
-                <link rel="stylesheet" href="./app/index.css">
+                <link rel="stylesheet" href="../public/app/index.css">
                 `;
             this.shadowRoot.innerHTML += `
                 <my-navbar></my-navbar>
@@ -35,7 +35,7 @@ class AppContainer extends HTMLElement {
                 <my-playing></my-playing>
                 `;
             const publicationsSection = this.ownerDocument.createElement("section");
-            publicationsSection.className = 'publicationS';
+            publicationsSection.className = 'publications';
             this.publicationsList.forEach((user) => {
                 publicationsSection.appendChild(user);
             });

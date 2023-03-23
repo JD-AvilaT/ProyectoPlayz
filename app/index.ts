@@ -33,7 +33,7 @@ class AppContainer extends HTMLElement {
         render() {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML += `
-                <link rel="stylesheet" href="./app/index.css">
+                <link rel="stylesheet" href="../public/app/index.css">
                 `;
 
                 this.shadowRoot.innerHTML += `
@@ -49,7 +49,7 @@ class AppContainer extends HTMLElement {
                 `;
                 
                 const publicationsSection = this.ownerDocument.createElement("section")
-                publicationsSection.className = 'publicationS'
+                publicationsSection.className = 'publications'
                 this.publicationsList.forEach((user) => {
                     publicationsSection.appendChild(user);
                 });

@@ -10,7 +10,7 @@ class Playing extends HTMLElement {
         if (this.shadowRoot) {
             this.shadowRoot.innerHTML =
                 `
-            <link rel="stylesheet" href="./app/components/navbar/navbar.css">
+            <link rel="stylesheet" href="./app/components/playing/playing.css">
                 <section>
                     <div class="up">
                         <img src="../app/imgs/avila.jpg">

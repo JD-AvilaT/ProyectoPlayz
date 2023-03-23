@@ -1,0 +1,45 @@
+section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(27, 27, 27);
+}
+
+.logo{
+    height: 200px;
+    margin: 2%;
+}
+
+.locations{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    font-size: 40px;
+}
+
+.profile{
+    margin: 2%;
+
+}
+
+.profile img{
+    height: 100px;
+    border-radius: 50%;
+}
+
+.home{
+    color: rgb(53, 212, 117);
+    text-decoration: none;
+}
+
+.games, .friends, .saved{
+    color: white;
+    text-decoration: none;
+}
+
+.home:hover, .games:hover, .friends:hover, .saved:hover{
+    color: rgb(53, 212, 117);
+}
