@@ -1,11 +1,11 @@
-export var Attributes;
-(function (Attributes) {
-    Attributes["imgprofile"] = "imgprofile";
-    Attributes["name"] = "name";
-    Attributes["username"] = "username";
-    Attributes["description"] = "description";
-    Attributes["video"] = "video";
-})(Attributes || (Attributes = {}));
+export var Attribute1;
+(function (Attribute1) {
+    Attribute1["imgprofile"] = "imgprofile";
+    Attribute1["name"] = "name";
+    Attribute1["username"] = "username";
+    Attribute1["description"] = "description";
+    Attribute1["video"] = "video";
+})(Attribute1 || (Attribute1 = {}));
 class MyPublications extends HTMLElement {
     static get observedAttributes() {
         const attrs = {

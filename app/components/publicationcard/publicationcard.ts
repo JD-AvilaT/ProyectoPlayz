@@ -1,4 +1,4 @@
-export enum Attributes {
+export enum Attribute1 {
     "imgprofile" = "imgprofile",
     "name" = "name",
     "username" = "username",
@@ -14,7 +14,7 @@ class MyPublications extends HTMLElement {
     video?: string;
     
     static get observedAttributes() {
-        const attrs: Record<Attributes, null> = {
+        const attrs: Record<Attribute1, null> = {
             imgprofile: null,
             name: null,
             username: null,
@@ -34,7 +34,7 @@ class MyPublications extends HTMLElement {
     }
     
     attributeChangedCallback(
-        propName: Attributes,
+        propName: Attribute1,
         _: string | undefined,
         newValue: string | undefined
         ) {

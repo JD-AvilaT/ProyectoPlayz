@@ -1,10 +1,11 @@
 import "./components/index.js"
 import Publicationsdata from "./publicationdata.js";
 
-import MyPublications, { Attributes } from "./components/publicationcard/publicationcard.js";
+import MyPublications, { Attribute1 } from "./components/publicationcard/publicationcard.js";
 
 class AppContainer extends HTMLElement {
-    publications: MyPublications[] = [];
+    publicationsList: MyPublications[] = [];
+
     
     constructor() {
         super();
@@ -14,14 +15,16 @@ class AppContainer extends HTMLElement {
             const publicationCard = this.ownerDocument.createElement(
                 "my-publication"
                 ) as MyPublications;
-                publicationCard.setAttribute(Attributes.imgprofile, user.imgprofile);
-                publicationCard.setAttribute(Attributes.name, user.name);
-                publicationCard.setAttribute(Attributes.username, user.username);
-                publicationCard.setAttribute(Attributes.description, user.description);
-                publicationCard.setAttribute(Attributes.video, user.video);
-                this.publications.push(publicationCard);
+                publicationCard.setAttribute(Attribute1.imgprofile, user.imgprofile);
+                publicationCard.setAttribute(Attribute1.name, user.name);
+                publicationCard.setAttribute(Attribute1.username, user.username);
+                publicationCard.setAttribute(Attribute1.description, user.description);
+                publicationCard.setAttribute(Attribute1.video, user.video);
+                this.publicationsList.push(publicationCard);
             });
         }
+
+        
         
         connectedCallback() {
             this.render();
@@ -32,10 +35,22 @@ class AppContainer extends HTMLElement {
                 this.shadowRoot.innerHTML += `
                 <link rel="stylesheet" href="./app/index.css">
                 `;
+
+                this.shadowRoot.innerHTML += `
+                <my-navbar></my-navbar>
+                `;
+
+                this.shadowRoot.innerHTML += `
+                <my-search></my-search>
+                `;
+
+                this.shadowRoot.innerHTML += `
+                <my-playing></my-playing>
+                `;
                 
                 const publicationsSection = this.ownerDocument.createElement("section")
                 publicationsSection.className = 'publicationS'
-                this.publications.forEach((user) => {
+                this.publicationsList.forEach((user) => {
                     publicationsSection.appendChild(user);
                 });
                 this.shadowRoot?.appendChild(publicationsSection);
