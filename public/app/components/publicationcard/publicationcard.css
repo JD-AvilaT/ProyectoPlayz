@@ -48,10 +48,10 @@
     color: white;
 }
 
-.all iframe{
+section iframe{
     border-radius: 10px;
     border: 0;
-    height: 600px;
+    height: 400px;
 }
 
 .likeAppart{
@@ -64,4 +64,21 @@
 
 .likeAppart svg:hover{
     color: rgb(53, 212, 117);
+}
+
+@media screen and (max-width: 400px){
+
+    .all{
+        width: 300px; 
+    }
+
+    .profile img{
+        height: 40px;
+    }
+
+    .all iframe{
+        width: 300px;
+        height: 200px;
+    }
+    
 }
