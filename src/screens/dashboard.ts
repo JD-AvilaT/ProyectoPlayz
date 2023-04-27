@@ -1,7 +1,7 @@
-import "./components/index.js"
-import Publicationsdata from "./publicationdata.js";
+import "../components/export"
+import Publicationsdata from "../mocks/publicationdata";
 
-import MyPublications, { Attribute1 } from "./components/publicationcard/publicationcard.js";
+import MyPublications, { Attribute1 } from "../components/publicationcard/publicationcard";
 
 class AppContainer extends HTMLElement {
     publicationsList: MyPublications[] = [];
