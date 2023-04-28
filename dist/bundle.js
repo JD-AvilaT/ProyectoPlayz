@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/components/infoinputs/infoinputs.css":
+/*!**************************************************!*\
+  !*** ./src/components/infoinputs/infoinputs.css ***!
+  \**************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://proyectoplayz/./src/components/infoinputs/infoinputs.css?");
+
+/***/ }),
+
 /***/ "./src/components/navbar/navbar.css":
 /*!******************************************!*\
   !*** ./src/components/navbar/navbar.css ***!
@@ -50,6 +60,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/components/sendbutton/sendbutton.css":
+/*!**************************************************!*\
+  !*** ./src/components/sendbutton/sendbutton.css ***!
+  \**************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://proyectoplayz/./src/components/sendbutton/sendbutton.css?");
+
+/***/ }),
+
 /***/ "./src/screens/index.css":
 /*!*******************************!*\
   !*** ./src/screens/index.css ***!
@@ -57,6 +77,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body{\\r\\n    background-color: rgb(27, 27, 27);\\r\\n    font-family: sans-serif;\\r\\n    margin: 0;\\r\\n    padding: 0;\\r\\n}\\r\\n\\r\\n.publications{\\r\\n    display: flex;\\r\\n    flex-direction: column;\\r\\n    align-items: center;\\r\\n}\\r\\n\\r\\n@media screen and (max-width: 400px){\\r\\n    .publications{\\r\\n        width: 100%px;\\r\\n    }\\r\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://proyectoplayz/./src/screens/index.css?");
+
+/***/ }),
+
+/***/ "./src/screens/register.css":
+/*!**********************************!*\
+  !*** ./src/screens/register.css ***!
+  \**********************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://proyectoplayz/./src/screens/register.css?");
 
 /***/ }),
 
@@ -86,7 +116,17 @@ eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=w
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"MyPublications\": () => (/* reexport safe */ _publicationcard_publicationcard__WEBPACK_IMPORTED_MODULE_0__[\"default\"]),\n/* harmony export */   \"Navbar\": () => (/* reexport safe */ _navbar_navbar__WEBPACK_IMPORTED_MODULE_1__[\"default\"]),\n/* harmony export */   \"Playing\": () => (/* reexport safe */ _playing_playing__WEBPACK_IMPORTED_MODULE_3__[\"default\"]),\n/* harmony export */   \"Search\": () => (/* reexport safe */ _search_search__WEBPACK_IMPORTED_MODULE_2__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _publicationcard_publicationcard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./publicationcard/publicationcard */ \"./src/components/publicationcard/publicationcard.ts\");\n/* harmony import */ var _navbar_navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navbar/navbar */ \"./src/components/navbar/navbar.ts\");\n/* harmony import */ var _search_search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search/search */ \"./src/components/search/search.ts\");\n/* harmony import */ var _playing_playing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./playing/playing */ \"./src/components/playing/playing.ts\");\n\n\n\n\n\n\n//# sourceURL=webpack://proyectoplayz/./src/components/export.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"MyButton\": () => (/* reexport safe */ _sendbutton_sendbutton__WEBPACK_IMPORTED_MODULE_5__[\"default\"]),\n/* harmony export */   \"MyInput\": () => (/* reexport safe */ _infoinputs_infoinputs__WEBPACK_IMPORTED_MODULE_4__[\"default\"]),\n/* harmony export */   \"MyPublications\": () => (/* reexport safe */ _publicationcard_publicationcard__WEBPACK_IMPORTED_MODULE_0__[\"default\"]),\n/* harmony export */   \"Navbar\": () => (/* reexport safe */ _navbar_navbar__WEBPACK_IMPORTED_MODULE_1__[\"default\"]),\n/* harmony export */   \"Playing\": () => (/* reexport safe */ _playing_playing__WEBPACK_IMPORTED_MODULE_3__[\"default\"]),\n/* harmony export */   \"Search\": () => (/* reexport safe */ _search_search__WEBPACK_IMPORTED_MODULE_2__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _publicationcard_publicationcard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./publicationcard/publicationcard */ \"./src/components/publicationcard/publicationcard.ts\");\n/* harmony import */ var _navbar_navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navbar/navbar */ \"./src/components/navbar/navbar.ts\");\n/* harmony import */ var _search_search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search/search */ \"./src/components/search/search.ts\");\n/* harmony import */ var _playing_playing__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./playing/playing */ \"./src/components/playing/playing.ts\");\n/* harmony import */ var _infoinputs_infoinputs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./infoinputs/infoinputs */ \"./src/components/infoinputs/infoinputs.ts\");\n/* harmony import */ var _sendbutton_sendbutton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./sendbutton/sendbutton */ \"./src/components/sendbutton/sendbutton.ts\");\n\n\n\n\n\n\n\n\n//# sourceURL=webpack://proyectoplayz/./src/components/export.ts?");
+
+/***/ }),
+
+/***/ "./src/components/infoinputs/infoinputs.ts":
+/*!*************************************************!*\
+  !*** ./src/components/infoinputs/infoinputs.ts ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"attribute\": () => (/* binding */ attribute),\n/* harmony export */   \"default\": () => (/* binding */ MyInput)\n/* harmony export */ });\n/* harmony import */ var _infoinputs_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./infoinputs.css */ \"./src/components/infoinputs/infoinputs.css\");\n\nvar attribute;\n(function (attribute) {\n    attribute[\"input_text\"] = \"input_text\";\n})(attribute || (attribute = {}));\nclass MyInput extends HTMLElement {\n    static get observedAttributes() {\n        const attrs = {\n            input_text: null,\n        };\n        return Object.keys(attrs);\n    }\n    attributeChangedCallback(propName, _, newValue) {\n        switch (propName) {\n            default:\n                this[propName] = newValue;\n                break;\n        }\n    }\n    constructor() {\n        super();\n        this.attachShadow({ mode: \"open\" });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        var _a, _b;\n        if (this.shadowRoot) {\n            this.shadowRoot.innerHTML = '';\n            const css = this.ownerDocument.createElement('style');\n            css.innerHTML = _infoinputs_css__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\n            (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(css);\n            const input = this.ownerDocument.createElement('input');\n            input.placeholder = `${this.input_text}`;\n            (_b = this.shadowRoot) === null || _b === void 0 ? void 0 : _b.appendChild(input);\n        }\n    }\n}\ncustomElements.define('my-input', MyInput);\n\n\n//# sourceURL=webpack://proyectoplayz/./src/components/infoinputs/infoinputs.ts?");
 
 /***/ }),
 
@@ -130,13 +170,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/components/sendbutton/sendbutton.ts":
+/*!*************************************************!*\
+  !*** ./src/components/sendbutton/sendbutton.ts ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ MyButton)\n/* harmony export */ });\n/* harmony import */ var _sendbutton_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sendbutton.css */ \"./src/components/sendbutton/sendbutton.css\");\n\nclass MyButton extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: \"open\" });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        var _a, _b;\n        if (this.shadowRoot) {\n            this.shadowRoot.innerHTML = '';\n            const css = this.ownerDocument.createElement('style');\n            css.innerHTML = _sendbutton_css__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\n            (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(css);\n            const button = this.ownerDocument.createElement('button');\n            button.innerText = `Register`;\n            (_b = this.shadowRoot) === null || _b === void 0 ? void 0 : _b.appendChild(button);\n        }\n    }\n}\ncustomElements.define('my-button', MyButton);\n\n\n//# sourceURL=webpack://proyectoplayz/./src/components/sendbutton/sendbutton.ts?");
+
+/***/ }),
+
 /***/ "./src/index.ts":
 /*!**********************!*\
   !*** ./src/index.ts ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _screens_dashboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./screens/dashboard */ \"./src/screens/dashboard.ts\");\n/* harmony import */ var _components_export__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/export */ \"./src/components/export.ts\");\n\n\nclass AppContainer extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: \"open\" });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        var _a;\n        const dashboard = this.ownerDocument.createElement('app-dashboard');\n        (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(dashboard);\n    }\n}\ncustomElements.define('app-container', AppContainer);\n\n\n//# sourceURL=webpack://proyectoplayz/./src/index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _screens_dashboard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./screens/dashboard */ \"./src/screens/dashboard.ts\");\n/* harmony import */ var _screens_register__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./screens/register */ \"./src/screens/register.ts\");\n/* harmony import */ var _components_export__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/export */ \"./src/components/export.ts\");\n\n\n\nclass AppContainer extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: \"open\" });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        //const dashboard = this.ownerDocument.createElement('app-dashboard');\n        //this.shadowRoot?.appendChild(dashboard);\n        var _a;\n        const register = this.ownerDocument.createElement('app-register');\n        (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(register);\n    }\n}\ncustomElements.define('app-container', AppContainer);\n\n\n//# sourceURL=webpack://proyectoplayz/./src/index.ts?");
+
+/***/ }),
+
+/***/ "./src/mocks/placeholders.ts":
+/*!***********************************!*\
+  !*** ./src/mocks/placeholders.ts ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst Placeholdersdata = [\n    {\n        text: \"Username\"\n    },\n    {\n        text: \"Email\"\n    },\n    {\n        text: \"Password\"\n    }\n];\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Placeholdersdata);\n\n\n//# sourceURL=webpack://proyectoplayz/./src/mocks/placeholders.ts?");
 
 /***/ }),
 
@@ -160,13 +220,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 
 /***/ }),
 
+/***/ "./src/screens/register.ts":
+/*!*********************************!*\
+  !*** ./src/screens/register.ts ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_export__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/export */ \"./src/components/export.ts\");\n/* harmony import */ var _mocks_placeholders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../mocks/placeholders */ \"./src/mocks/placeholders.ts\");\n/* harmony import */ var _components_infoinputs_infoinputs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/infoinputs/infoinputs */ \"./src/components/infoinputs/infoinputs.ts\");\n/* harmony import */ var _register_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./register.css */ \"./src/screens/register.css\");\n\n\n\n\nclass AppRegister extends HTMLElement {\n    constructor() {\n        super();\n        this.attachShadow({ mode: \"open\" });\n    }\n    connectedCallback() {\n        this.render();\n    }\n    render() {\n        var _a, _b;\n        if (this.shadowRoot) {\n            this.shadowRoot.innerHTML = ``;\n            const css = this.ownerDocument.createElement('style');\n            css.innerHTML = _register_css__WEBPACK_IMPORTED_MODULE_3__[\"default\"];\n            (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(css);\n            const form = this.ownerDocument.createElement('section');\n            _mocks_placeholders__WEBPACK_IMPORTED_MODULE_1__[\"default\"].forEach((text) => {\n                const input = this.ownerDocument.createElement('my-input');\n                input.setAttribute(_components_infoinputs_infoinputs__WEBPACK_IMPORTED_MODULE_2__.attribute.input_text, text.text);\n                form.appendChild(input);\n            });\n            const button = this.ownerDocument.createElement('my-button');\n            const account = this.ownerDocument.createElement('h3');\n            account.innerText = 'Already have an account?';\n            form.appendChild(button);\n            form.appendChild(account);\n            (_b = this.shadowRoot) === null || _b === void 0 ? void 0 : _b.appendChild(form);\n        }\n    }\n}\ncustomElements.define('app-register', AppRegister);\n\n\n//# sourceURL=webpack://proyectoplayz/./src/screens/register.ts?");
+
+/***/ }),
+
 /***/ "./src/services/publicationsApi.ts":
 /*!*****************************************!*\
   !*** ./src/services/publicationsApi.ts ***!
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getPublications\": () => (/* binding */ getPublications)\n/* harmony export */ });\n/* harmony import */ var _mocks_publicationdata__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../mocks/publicationdata */ \"./src/mocks/publicationdata.ts\");\nvar __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\n\nfunction getPublications() {\n    return __awaiter(this, void 0, void 0, function* () {\n        const publication = yield new Promise((resolve) => {\n            setTimeout(() => resolve(_mocks_publicationdata__WEBPACK_IMPORTED_MODULE_0__.Publicationsdata), 2000);\n        });\n        return publication;\n    });\n}\n\n\n//# sourceURL=webpack://proyectoplayz/./src/services/publicationsApi.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getPublications\": () => (/* binding */ getPublications)\n/* harmony export */ });\n/* harmony import */ var _mocks_publicationdata__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../mocks/publicationdata */ \"./src/mocks/publicationdata.ts\");\nvar __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\n\nfunction getPublications() {\n    return __awaiter(this, void 0, void 0, function* () {\n        const publication = yield new Promise((resolve) => {\n            setTimeout(() => resolve(_mocks_publicationdata__WEBPACK_IMPORTED_MODULE_0__.Publicationsdata), 1000);\n        });\n        return publication;\n    });\n}\n\n\n//# sourceURL=webpack://proyectoplayz/./src/services/publicationsApi.ts?");
 
 /***/ })
 

@@ -3,7 +3,7 @@ import { Publicationsdata } from "../mocks/publicationdata";
 
 export async function getPublications(): Promise<DataPublications[]> {
     const publication: DataPublications[] = await new Promise((resolve)=>{
-      setTimeout(()=> resolve(Publicationsdata), 2000)
+      setTimeout(()=> resolve(Publicationsdata), 1000)
     })
     return publication
 }
