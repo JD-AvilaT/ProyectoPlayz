@@ -17,7 +17,7 @@ class Playing extends HTMLElement{
             `
                 <section>
                     <div class="up">
-                        <img src="../app/imgs/avila.jpg">
+                        <img src="../src/imgs/avila.jpg">
                         <input type="text" placeholder="What are you playing?">
                     </div>
                     <button>

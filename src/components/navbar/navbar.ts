@@ -16,7 +16,7 @@ class Navbar extends HTMLElement{
             this.shadowRoot.innerHTML = 
             `
                 <section>
-                    <img class="logo" src="../app/imgs/logo.png">
+                    <img class="logo" src="../src/imgs/logo.png">
                     <div class="locations">
                         <a class="home" href="">Home</a>
                         <a class="games" href="">Games</a>
@@ -24,7 +24,7 @@ class Navbar extends HTMLElement{
                         <a class="saved" href="">Saved</a>
                     </div>
                     <div class="profile">
-                        <img src="../app/imgs/avila.jpg">
+                        <img src="../src/imgs/avila.jpg">
                     </div>
                     
                 </section>

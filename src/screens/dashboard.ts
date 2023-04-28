@@ -1,38 +1,20 @@
 import "../components/export"
-import Publications from "../services/publicationsApi"
-
+import {getPublications} from "../services/publicationsApi"
 import MyPublications, { Attribute1 } from "../components/publicationcard/publicationcard";
-
 import styles from "./index.css"
 
 class AppDashboard extends HTMLElement {
-    publicationsList: MyPublications[] = [];
-
-    
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
-
-        Publications.for((user) => {
-            const publicationCard = this.ownerDocument.createElement(
-                "my-publication"
-                ) as MyPublications;
-                publicationCard.setAttribute(Attribute1.imgprofile, user.imgprofile);
-                publicationCard.setAttribute(Attribute1.name, user.name);
-                publicationCard.setAttribute(Attribute1.username, user.username);
-                publicationCard.setAttribute(Attribute1.description, user.description);
-                publicationCard.setAttribute(Attribute1.video, user.video);
-                this.publicationsList.push(publicationCard);
-            });
         }
 
-        
-        
-        connectedCallback() {
-            this.render();
+        async connectedCallback() {
+            const publication = await getPublications()
+            this.render(publication);
         }
         
-        render() {
+        render(publication: any) {
             if (this.shadowRoot) {
                 const css = this.ownerDocument.createElement('style')
                 css.innerHTML = styles
@@ -50,12 +32,21 @@ class AppDashboard extends HTMLElement {
                 <my-playing></my-playing>
                 `;
                 
-                const publicationsSection = this.ownerDocument.createElement("section")
-                publicationsSection.className = 'publications'
-                this.publicationsList.forEach((user) => {
-                    publicationsSection.appendChild(user);
-                });
-                this.shadowRoot?.appendChild(publicationsSection);
+                publication.forEach((publication:any)=>{
+                    const publicationCard = this.ownerDocument.createElement(
+                        "my-publication"
+                        ) as MyPublications;
+                        publicationCard.setAttribute(Attribute1.imgprofile, publication.imgprofile);
+                        publicationCard.setAttribute(Attribute1.name, publication.name);
+                        publicationCard.setAttribute(Attribute1.username, publication.username);
+                        publicationCard.setAttribute(Attribute1.description, publication.description);
+                        publicationCard.setAttribute(Attribute1.video, publication.video);
+
+                    const publicationsSection = this.ownerDocument.createElement("section")
+                    publicationsSection.className = 'publications'
+                    publicationsSection.appendChild(publicationCard);
+                    this.shadowRoot?.appendChild(publicationsSection);
+                })
 
             }
         }
