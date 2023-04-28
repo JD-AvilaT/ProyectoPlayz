@@ -1,4 +1,4 @@
-interface DataPublications {
+export interface DataPublications {
     imgprofile: string;
     name: string;
     username: string;
@@ -6,7 +6,7 @@ interface DataPublications {
     video: string;
 }
 
-const Publicationsdata: DataPublications[] = [
+export const Publicationsdata: DataPublications[] = [
     {
         imgprofile: "https://pbs.twimg.com/profile_images/1628500270065016832/zRqA0Ud9_400x400.jpg",
         name: "Kyedae",
@@ -57,5 +57,3 @@ const Publicationsdata: DataPublications[] = [
         video:"https://www.youtube.com/embed/1e_Q8hf3cGM?clip=Ugkxvzr5GgfiOYdgVHRcbhNjot4NTbzT904k&amp;clipt=EKSFJBjg7iQ",
     },
 ];
-
-export default Publicationsdata;
