@@ -1,7 +1,9 @@
 import "../components/export"
 import {getPublications} from "../services/publicationsApi"
 import MyPublications, { Attribute1 } from "../components/publicationcard/publicationcard";
+
 import styles from "./index.css"
+
 
 class AppDashboard extends HTMLElement {
     constructor() {
@@ -20,17 +22,21 @@ class AppDashboard extends HTMLElement {
                 css.innerHTML = styles
                 this.shadowRoot?.appendChild(css)
 
-                this.shadowRoot.innerHTML += `
-                <my-navbar></my-navbar>
-                `;
+                const main = this.ownerDocument.createElement("section");
+                main.className = 'main';
 
-                this.shadowRoot.innerHTML += `
-                <my-search></my-search>
-                `;
+                const navbar = this.ownerDocument.createElement("my-navbar")
 
-                this.shadowRoot.innerHTML += `
-                <my-playing></my-playing>
-                `;
+                const search = this.ownerDocument.createElement("my-search")
+
+                const publicate = this.ownerDocument.createElement("my-playing")
+
+                main.appendChild(navbar)
+                main.appendChild(search)
+                main.appendChild(publicate)
+
+                const publicationsSection = this.ownerDocument.createElement("section")
+                publicationsSection.className = 'publications';
                 
                 publication.forEach((publication:any)=>{
                     const publicationCard = this.ownerDocument.createElement(
@@ -42,11 +48,13 @@ class AppDashboard extends HTMLElement {
                         publicationCard.setAttribute(Attribute1.description, publication.description);
                         publicationCard.setAttribute(Attribute1.video, publication.video);
 
-                    const publicationsSection = this.ownerDocument.createElement("section")
-                    publicationsSection.className = 'publications'
+                 
                     publicationsSection.appendChild(publicationCard);
-                    this.shadowRoot?.appendChild(publicationsSection);
                 })
+                
+                main.appendChild(publicationsSection)
+
+                this.shadowRoot?.appendChild(main)
 
             }
         }
