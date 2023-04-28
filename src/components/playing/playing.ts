@@ -1,3 +1,5 @@
+import styles from "./playing.css"
+
 class Playing extends HTMLElement{
     
     constructor(){
@@ -13,7 +15,6 @@ class Playing extends HTMLElement{
         if (this.shadowRoot){
             this.shadowRoot.innerHTML = 
             `
-            <link rel="stylesheet" href="./app/components/playing/playing.css">
                 <section>
                     <div class="up">
                         <img src="../app/imgs/avila.jpg">
@@ -28,6 +29,10 @@ class Playing extends HTMLElement{
                     </button>                                           
                 </section>
             `;
+
+            const css = this.ownerDocument.createElement('style')
+                css.innerHTML = styles
+                this.shadowRoot?.appendChild(css)
         }
     }
 }

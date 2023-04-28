@@ -1,9 +1,11 @@
 import "../components/export"
-import Publicationsdata from "../mocks/publicationdata";
+import Publications from "../services/publicationsApi"
 
 import MyPublications, { Attribute1 } from "../components/publicationcard/publicationcard";
 
-class AppContainer extends HTMLElement {
+import styles from "./index.css"
+
+class AppDashboard extends HTMLElement {
     publicationsList: MyPublications[] = [];
 
     
@@ -11,7 +13,7 @@ class AppContainer extends HTMLElement {
         super();
         this.attachShadow({ mode: "open" });
 
-        Publicationsdata.forEach((user) => {
+        Publications.for((user) => {
             const publicationCard = this.ownerDocument.createElement(
                 "my-publication"
                 ) as MyPublications;
@@ -32,9 +34,9 @@ class AppContainer extends HTMLElement {
         
         render() {
             if (this.shadowRoot) {
-                this.shadowRoot.innerHTML += `
-                <link rel="stylesheet" href="../public/app/index.css">
-                `;
+                const css = this.ownerDocument.createElement('style')
+                css.innerHTML = styles
+                this.shadowRoot?.appendChild(css)
 
                 this.shadowRoot.innerHTML += `
                 <my-navbar></my-navbar>
@@ -59,4 +61,4 @@ class AppContainer extends HTMLElement {
         }
     }
     
-customElements.define("app-container", AppContainer);
+customElements.define("app-dashboard", AppDashboard);

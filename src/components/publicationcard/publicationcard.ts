@@ -1,3 +1,5 @@
+import styles from "./publicationcard.css"
+
 export enum Attribute1 {
     "imgprofile" = "imgprofile",
     "name" = "name",
@@ -50,7 +52,6 @@ class MyPublications extends HTMLElement {
         render() {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
-                <link rel="stylesheet" href="./app/components/Publicationcard/Publicationcard.css">
                 <section class="all">
                     <section class="profile">
                         <img src="${this.imgprofile}">
@@ -81,6 +82,10 @@ class MyPublications extends HTMLElement {
                     </section>
                 </section>
                 `;
+
+            const css = this.ownerDocument.createElement('style')
+            css.innerHTML = styles
+            this.shadowRoot?.appendChild(css)
             }
         }
     }

@@ -1,3 +1,5 @@
+import styles from "./search.css"
+
 class Search extends HTMLElement{
     
     constructor(){
@@ -13,7 +15,6 @@ class Search extends HTMLElement{
         if (this.shadowRoot){
             this.shadowRoot.innerHTML = 
             `
-            <link rel="stylesheet" href="./app/components/search/search.css">
                 <section>
                 <div>
                     <input type="text" placeholder="Search">
@@ -25,6 +26,10 @@ class Search extends HTMLElement{
                 </div>
                 </section>
             `;
+
+            const css = this.ownerDocument.createElement('style')
+            css.innerHTML = styles
+            this.shadowRoot?.appendChild(css)
         }
     }
 }

@@ -1,3 +1,5 @@
+import styles from "./navbar.css"
+
 class Navbar extends HTMLElement{
     
     constructor(){
@@ -13,7 +15,6 @@ class Navbar extends HTMLElement{
         if (this.shadowRoot){
             this.shadowRoot.innerHTML = 
             `
-            <link rel="stylesheet" href="./app/components/navbar/navbar.css">
                 <section>
                     <img class="logo" src="../app/imgs/logo.png">
                     <div class="locations">
@@ -28,6 +29,10 @@ class Navbar extends HTMLElement{
                     
                 </section>
             `;
+        
+            const css = this.ownerDocument.createElement('style')
+            css.innerHTML = styles
+            this.shadowRoot?.appendChild(css)
         }
     }
 }
