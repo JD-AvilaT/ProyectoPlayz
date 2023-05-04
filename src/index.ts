@@ -14,12 +14,12 @@ class AppContainer extends HTMLElement {
 
     render() {
 
-        const dashboard = this.ownerDocument.createElement('app-dashboard');
-        this.shadowRoot?.appendChild(dashboard);
+        // const dashboard = this.ownerDocument.createElement('app-dashboard');
+        // this.shadowRoot?.appendChild(dashboard);
 
 
-        //const register = this.ownerDocument.createElement('app-register');
-        //this.shadowRoot?.appendChild(register);
+        const register = this.ownerDocument.createElement('app-register');
+        this.shadowRoot?.appendChild(register);
     }
 }
 

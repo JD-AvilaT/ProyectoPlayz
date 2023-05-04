@@ -1,15 +1,18 @@
 import styles from "./infoinputs.css"
 
-export enum attribute{
-    "input_text"="input_text"
+export enum  attribute{
+    "text"="text",
+    "type"="type"
 }
 
 export default class MyInput extends HTMLElement{
-    input_text?: string;
+    text?: string;
+    type?:string
 
     static get observedAttributes(){
         const attrs: Record<attribute, null> = {
-            input_text: null,
+            text: null,
+            type: null
         }
         return Object.keys(attrs)
     }
@@ -25,7 +28,6 @@ export default class MyInput extends HTMLElement{
                 break;
         }
     }
-
     constructor(){
         super();
         this.attachShadow({mode:"open"});
@@ -44,7 +46,8 @@ export default class MyInput extends HTMLElement{
         this.shadowRoot?.appendChild(css)
 
         const input = this.ownerDocument.createElement('input');
-        input.placeholder = `${this.input_text}`;
+        input.placeholder = `${this.text}`
+        input.type = `${this.type}`
 
         this.shadowRoot?.appendChild(input)
         }

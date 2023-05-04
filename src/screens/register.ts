@@ -1,8 +1,15 @@
 import "../components/export"
-import Placeholdersdata from "../mocks/placeholders";
-import {attribute} from "../components/infoinputs/infoinputs"
+import { attribute } from "../components/infoinputs/infoinputs";
 
 import styles from "./register.css"
+import { dispatch } from "../store/index";
+import {Register} from "../store/actions"
+
+const credentials = { 
+    username: "",
+    email: "",
+    password: ""
+}
 
 class AppRegister extends HTMLElement {
     constructor(){
@@ -24,14 +31,35 @@ class AppRegister extends HTMLElement {
 
             const form = this.ownerDocument.createElement('section')
 
-            Placeholdersdata.forEach((text)=>{
-                const input = this.ownerDocument.createElement('my-input')
-                input.setAttribute(attribute.input_text, text.text)
-                form.appendChild(input)
-            });
-
-            const button = this.ownerDocument.createElement('my-button');
+            const userName = this.ownerDocument.createElement('my-input')
+            userName.setAttribute(attribute.text, "Username")
+            userName.setAttribute(attribute.type, "text")
             
+            form.appendChild(userName)
+
+            const email = this.ownerDocument.createElement('my-input')
+            email.setAttribute(attribute.text, "Email")
+            email.setAttribute(attribute.type, "email")
+            form.appendChild(email)
+
+            const password = this.ownerDocument.createElement('my-input')
+            password.setAttribute(attribute.text, "Password")
+            password.setAttribute(attribute.type, "password")
+            form.appendChild(password)
+            
+            const button = this.ownerDocument.createElement('my-button');
+            // button.addEventListener('click', ()=>{
+            //     dispatch(
+            //         Register({
+            //             payload:{
+            //                 userName: ,
+            //                 email:,
+            //                 password:
+            //             }
+            //         })
+            //     )
+            // })
+
             const account = this.ownerDocument.createElement('h3')
             account.innerText = 'Already have an account?'
 

@@ -1,11 +1,9 @@
+import { User } from "./users";
+
 export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
-    user: {
-        userName: string,
-        email: string,
-        password: string,
-    }
+    Users: User[]
 }
 
 export enum AuthActions {
@@ -16,7 +14,7 @@ export enum AuthActions {
 
 export interface LogInAction {
     action: AuthActions.LOGIN,
-    payload: Pick<AppState, "user">
+    payload: User
 }
 
 export interface LogOutAction {
@@ -26,7 +24,7 @@ export interface LogOutAction {
 
 export interface RegisterAction {
     action: AuthActions.REGISTER,
-    payload: Pick<AppState, "user">
+    payload: User
 }
 
 export type Actions = LogInAction | LogOutAction | RegisterAction;

@@ -3,11 +3,7 @@ import { Actions, AppState, Observer } from "../types/store";
 import { reducer } from "./reducer";
 
 const initialState: AppState = {
-    user: {
-      userName: "",
-      email: "",
-      password: "",
-    }
+    Users: []
 };
 
 export let appState = Storage.get<AppState>({
