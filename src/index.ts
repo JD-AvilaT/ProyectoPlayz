@@ -1,11 +1,14 @@
 import "./screens/dashboard"
 import "./screens/register"
 import "./components/export"
+import { addObserver, appState } from "./store/index";
+import { Screens } from "./types/store";
 
 class AppContainer extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"})
+        addObserver(this)
     }
 
     connectedCallback() {
@@ -13,13 +16,22 @@ class AppContainer extends HTMLElement {
     }
 
     render() {
+        if (this.shadowRoot) this.shadowRoot.innerHTML = "";
 
-        // const dashboard = this.ownerDocument.createElement('app-dashboard');
-        // this.shadowRoot?.appendChild(dashboard);
+        switch (appState.screen) {
+            case Screens.REGISTER:
+                const register = this.ownerDocument.createElement('app-register');
+                this.shadowRoot?.appendChild(register);
+                break;
 
-
-        const register = this.ownerDocument.createElement('app-register');
-        this.shadowRoot?.appendChild(register);
+            case Screens.DASHBOARD:
+                const dashboard = this.ownerDocument.createElement('app-dashboard');
+                this.shadowRoot?.appendChild(dashboard);
+                break;
+        
+            default:
+                break;
+        }
     }
 }
 

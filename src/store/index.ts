@@ -1,9 +1,10 @@
 import Storage, { PersistanceKeys } from "../utils/storage";
-import { Actions, AppState, Observer } from "../types/store";
+import { Actions, AppState, Observer, Screens } from "../types/store";
 import { reducer } from "./reducer";
 
 const initialState: AppState = {
-    Users: []
+    Users: [],
+    screen: Screens.REGISTER,
 };
 
 export let appState = Storage.get<AppState>({
