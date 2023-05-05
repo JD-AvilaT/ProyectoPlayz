@@ -14,8 +14,12 @@ section my-input{
     text-align: center;
 }
 
-section h3{
+section button{
     color: rgb(53, 212, 117);
+    border: 0;
+    background: transparent;
+    font-family: sans-serif;
+
 }
 
 @media screen and (max-width: 400px){
