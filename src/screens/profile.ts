@@ -66,6 +66,11 @@ class AppProfile extends HTMLElement {
             userName.addEventListener("change", (e:any)=>credentials.password = e.target.value);
             console.log(credentials)
             form.appendChild(password);
+
+            const confirm = this.ownerDocument.createElement('button');
+            confirm.textContent = "Confirm";
+            confirm.className = "confirm";
+            form.appendChild(confirm);
             
             const button = this.ownerDocument.createElement('button');
              button.addEventListener("click", ()=>{
@@ -78,6 +83,7 @@ class AppProfile extends HTMLElement {
                 )
             })
             button.innerText = 'Log Out';
+            button.className = "logOut"
 
             editProfile.appendChild(form);
             container.appendChild(button);
