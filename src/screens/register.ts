@@ -30,6 +30,8 @@ class AppRegister extends HTMLElement {
             css.innerHTML = styles;
             this.shadowRoot?.appendChild(css);
 
+            const container = this.ownerDocument.createElement("section")
+
             const form = this.ownerDocument.createElement('section');
 
             const userName = this.ownerDocument.createElement('my-input');
@@ -68,12 +70,13 @@ class AppRegister extends HTMLElement {
                 )
             })
 
-            const account = this.ownerDocument.createElement('h3');
+            const account = this.ownerDocument.createElement('button');
             account.innerText = 'Already have an account?';
 
             form.appendChild(button);
             form.appendChild(account);
-            this.shadowRoot?.appendChild(form);
+            container.appendChild(form)
+            this.shadowRoot?.appendChild(container);
 
 
         }
