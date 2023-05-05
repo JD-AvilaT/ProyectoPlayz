@@ -31,8 +31,10 @@ class AppRegister extends HTMLElement {
             this.shadowRoot?.appendChild(css);
 
             const container = this.ownerDocument.createElement("section")
+            container.className = "container"
 
             const form = this.ownerDocument.createElement('section');
+            form.className = "form"
 
             const userName = this.ownerDocument.createElement('my-input');
             userName.setAttribute(attribute.text, "Username");
