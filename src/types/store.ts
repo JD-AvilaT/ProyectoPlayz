@@ -10,6 +10,7 @@ export type AppState = {
 export enum Screens{
     REGISTER = "REGISTER",
     DASHBOARD = "DASHBOARD",
+    PROFILE = "PROFILE",
 }
 
 export enum NavigationActions{
@@ -25,6 +26,7 @@ export enum AuthActions {
     "LOGIN" = "LOGIN",
     "REGISTER" = "REGISTER",
     "LOGOUT" = "LOGOUT",
+    "PROFILE" = "PROFILE",
 }
 
 export interface LogInAction {

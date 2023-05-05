@@ -28,6 +28,11 @@ class AppContainer extends HTMLElement {
                 const dashboard = this.ownerDocument.createElement('app-dashboard');
                 this.shadowRoot?.appendChild(dashboard);
                 break;
+
+            case Screens.PROFILE:
+                const profile = this.ownerDocument.createElement('app-profile');
+                this.shadowRoot?.appendChild(profile);
+                break;
         
             default:
                 break;
