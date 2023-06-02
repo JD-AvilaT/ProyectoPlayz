@@ -1,9 +1,9 @@
-import "../components/export"
-import { attribute } from "../components/infoinputs/infoinputs";
+import "../../components/export"
+import { attribute } from "../../components/infoinputs/infoinputs";
 import styles from "./profile.css"
-import { dispatch } from "../store/index";
-import {logOut, navigate} from "../store/actions"
-import { Screens } from "../types/store";
+import { dispatch } from "../../store/index";
+import {logOut, navigate} from "../../store/actions"
+import { Screens } from "../../types/store";
 
 const credentials = { 
     username: "",

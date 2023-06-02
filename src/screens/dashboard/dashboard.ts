@@ -1,6 +1,6 @@
-import "../components/export"
+import "../../components/export"
 import {getPublications} from "../services/publicationsApi"
-import MyPublications, { Attribute1 } from "../components/publicationcard/publicationcard";
+import MyPublications, { Attribute1 } from "../../components/publicationcard/publicationcard";
 
 import styles from "./index.css"
 
