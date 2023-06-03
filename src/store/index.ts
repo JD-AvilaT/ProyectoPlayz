@@ -9,10 +9,10 @@ onAuthStateChanged(auth, async(user) => {
   console.log('Entra');
   console.log('user',user)
   if (user) {
-    user.email !== null ? dispatch(await LogIn (user.email)) : '';
+    appState.user !== null ? dispatch(await LogIn (appState.user)) : '';
     dispatch(Navigate(Screens.DASHBOARD));
   } else {
-    dispatch(Navigate(Screens.DASHBOARD));
+    dispatch(Navigate(Screens.LOGIN));
   }
 });
 

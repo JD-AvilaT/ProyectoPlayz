@@ -4,6 +4,7 @@ import { Post } from "../../types/post";
 import styles from "./playing.css"
 
 const post: Post = {
+    id:"",
     imgprofile: appState.user.img,
     username: appState.user.userName,
     description: "",
