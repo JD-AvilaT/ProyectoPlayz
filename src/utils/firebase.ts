@@ -1,11 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot} from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot, where} from "firebase/firestore";
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, onAuthStateChanged} from "firebase/auth";
 
 import { Post } from "../types/post";
 import { User } from "../types/users";
 
 import firebaseConfig from "../firebaseConfig";
+import { appState } from "../store";
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
@@ -91,21 +92,35 @@ const GetPostsListener = (cb: (docs: Post[]) => void) => {
   };
 
 
-  const AddFavoriteDB = async (favorite: Post) =>{
-    try {
-    const where = collection(db, "favorites")
-      await addDoc(where,{...favorite, createdAt: new Date()});
-      return true
-    } catch (e) {
-      console.error("Error adding document: ", e);
-      return false
-    }
+const AddUserDB = async (user: User) =>{
+  try {
+  const where = collection(db, "users")
+    await addDoc(where,{...user, createdAt: new Date()});
+    return true
+  } catch (e) {
+    console.error("Error adding document: ", e);
+    return false
+  }
+}
+
+
+const AddFavoriteDB = async (favorite: Post) =>{
+  try {
+    const main = collection(db, "users", appState.user.id)
+  const where = collection(main, "favorites") 
+  await addDoc(where,{...favorite, createdAt: new Date()});
+    return true
+  } catch (e) {
+    console.error("Error adding document: ", e);
+    return false
+  }
 }
 
 const GetFavoritesDB = async(): Promise<Post[]> =>{
     const resp: Post[] = [];
 
-    const q=query(collection(db,"favorites"), orderBy("createdAt"))
+    const main = collection(db, "users", appState.user.id)
+    const q=query(collection(main,"favorites"), orderBy("createdAt"))
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       console.log(`${doc.id} => ${doc.data()}`);
@@ -117,7 +132,8 @@ const GetFavoritesDB = async(): Promise<Post[]> =>{
 }
 
 const GetFavoritesListener = (cb: (docs: Post[]) => void) => {
-    const q = query(collection(db, "favorites"), orderBy("createdAt")); 
+  const main = collection(db, "users", appState.user.id)
+    const q = query(collection(main, "favorites"), orderBy("createdAt")); 
     onSnapshot(q, (collection) => {
       const docs: Post[] = collection.docs.map((doc) => ({
         id: doc.id,
@@ -130,7 +146,8 @@ const GetFavoritesListener = (cb: (docs: Post[]) => void) => {
 
   const AddFriendDB = async (friend: User) =>{
     try {
-    const where = collection(db, "friends")
+      const main = collection(db, "users", appState.user.id)
+    const where = collection(main, "friends")
       await addDoc(where,{...friend, createdAt: new Date()});
       return true
     } catch (e) {
@@ -142,7 +159,8 @@ const GetFavoritesListener = (cb: (docs: Post[]) => void) => {
 const GetFriendsDB = async(): Promise<User[]> =>{
     const resp: User[] = [];
 
-    const q=query(collection(db,"friends"), orderBy("createdAt"))
+    const main = collection(db, "users", appState.user.id)
+    const q=query(collection(main,"friends"), orderBy("createdAt"))
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       console.log(`${doc.id} => ${doc.data()}`);
@@ -154,7 +172,9 @@ const GetFriendsDB = async(): Promise<User[]> =>{
 }
 
 const GetFriendsListener = (cb: (docs: User[]) => void) => {
-    const q = query(collection(db, "friends"), orderBy("createdAt")); 
+
+  const main = collection(db, "users", appState.user.id)
+    const q = query(collection(main, "friends"), orderBy("createdAt")); 
     onSnapshot(q, (collection) => {
       const docs: User[] = collection.docs.map((doc) => ({
         id: doc.id,
@@ -164,17 +184,6 @@ const GetFriendsListener = (cb: (docs: User[]) => void) => {
     });
   };
 
-
-const AddUserDB = async (user: User) =>{
-    try {
-    const where = collection(db, "users")
-      await addDoc(where,{...user, createdAt: new Date()});
-      return true
-    } catch (e) {
-      console.error("Error adding document: ", e);
-      return false
-    }
-}
 
 export default{
     registerUser,
