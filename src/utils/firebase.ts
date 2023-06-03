@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot, where, setDoc} from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot, where, setDoc, doc} from "firebase/firestore";
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, onAuthStateChanged} from "firebase/auth";
 
 import { Post } from "../types/post";
@@ -105,8 +105,13 @@ const AddUserDB = async (user: User) =>{
 
 const EditUserDB = async (user: User) =>{
   try {
-  const where = collection(db, "users", appState.user.id)
-    await setDoc
+    await setDoc (doc(db, "users", appState.user.id), {
+      id: appState.user.id,
+      userName: appState.user.userName,
+      email: appState.user.email,
+      password: appState.user.password,
+      img: appState.user.img,
+    })
     return true
   } catch (e) {
     console.error("Error editing document: ", e);
@@ -199,6 +204,7 @@ const GetFriendsListener = (cb: (docs: User[]) => void) => {
 export default{
     registerUser,
     loginUser,
+    EditUserDB,
     AddPostDB,
     GetPostsDB,
     GetPostsListener,
