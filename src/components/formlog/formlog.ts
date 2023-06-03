@@ -1,10 +1,13 @@
-import { dispatch } from "../../store";
+import { appState, dispatch } from "../../store";
 import {LogIn} from "../../store/actions"
 import styles from "./formlog.css"
 
 const credentials = {
+    id: appState.user.id,
+    userName: appState.user.userName,
     email: "",
     password: "",
+    img: appState.user.img,
 }
 
 export default class MyFormLog extends HTMLElement{

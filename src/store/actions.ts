@@ -10,7 +10,7 @@ export const Navigate = (screen:Screens): NavigationAction =>{
     }
 }
 
-export const LogIn = async (user:Omit<User, "id" | "userName" | "img"> ): Promise<LogInAction> =>{
+export const LogIn = async (user:User ): Promise<LogInAction> =>{
 
     await firebase.loginUser(user)
     
@@ -41,7 +41,7 @@ export const LogOut =  ():LogOutAction =>{
 
 export const Edit = async (user:User): Promise<EditAction> =>{
 
-    await firebase.loginUser(user)
+    await firebase.EditUserDB(user)
 
     return{
         action: UserActions.EDIT,

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot, where} from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot, where, setDoc} from "firebase/firestore";
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, setPersistence, browserSessionPersistence, onAuthStateChanged} from "firebase/auth";
 
 import { Post } from "../types/post";
@@ -99,6 +99,17 @@ const AddUserDB = async (user: User) =>{
     return true
   } catch (e) {
     console.error("Error adding document: ", e);
+    return false
+  }
+}
+
+const EditUserDB = async (user: User) =>{
+  try {
+  const where = collection(db, "users", appState.user.id)
+    await setDoc
+    return true
+  } catch (e) {
+    console.error("Error editing document: ", e);
     return false
   }
 }
