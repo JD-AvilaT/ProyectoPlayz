@@ -1,4 +1,4 @@
-import { navigate } from "../../store/actions";
+import { Navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { Screens } from "../../types/store";
 import styles from "./navbar.css"
@@ -35,7 +35,7 @@ class Navbar extends HTMLElement{
             home.className = "home"
             home.innerText = "Home"
             home.addEventListener("click", ()=>{
-                dispatch(navigate(Screens.DASHBOARD))
+                dispatch(Navigate(Screens.DASHBOARD))
              })
 
 
@@ -62,7 +62,7 @@ class Navbar extends HTMLElement{
             const profilebtn = this.ownerDocument.createElement("button")
             profilebtn.className = "btnprofile"
             profilebtn.addEventListener("click", ()=>{
-                dispatch(navigate(Screens.PROFILE))
+                dispatch(Navigate(Screens.PROFILE))
              })
 
             const profileImg = this.ownerDocument.createElement("img")

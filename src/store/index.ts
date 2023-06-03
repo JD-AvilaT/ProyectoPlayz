@@ -3,6 +3,18 @@ import { Actions, AppState, Observer, Screens } from "../types/store";
 import { reducer } from "./reducer";
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { LogIn, Navigate } from "./actions";
+
+onAuthStateChanged(auth, async(user) => {
+  console.log('Entra');
+  console.log('user',user)
+  if (user) {
+    user.email !== null ? dispatch(await LogIn (user.email)) : '';
+    dispatch(Navigate(Screens.DASHBOARD));
+  } else {
+    dispatch(Navigate(Screens.DASHBOARD));
+  }
+});
 
 const initialState: AppState = {
     user: {

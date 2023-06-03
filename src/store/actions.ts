@@ -1,16 +1,16 @@
 import { Post } from "../types/post"
-import {  Actions, UserActions, PostActions, NavigationActions, FriendsActions, LogInAction, LogOutAction } from "../types/store"
+import {  Actions, UserActions, PostActions, NavigationActions, FriendsActions, LogInAction, LogOutAction, AddFavoriteAction, AddFriendAction, NavigationAction, Screens, RegisterAction, EditAction, GetFriendsAction, GetFavoritesAction, GetPostsAction, AddPostAction } from "../types/store"
 import { User } from "../types/users"
 import firebase from "../utils/firebase"
 
-export const Navigate = (screen:Screen) =>{
+export const Navigate = (screen:Screens): NavigationAction =>{
     return{
         action: NavigationActions.NAVIGATE,
-        payload:screen,
+        payload: screen,
     }
 }
 
-export const LogIn = async (user:User) =>{
+export const LogIn = async (user:User): Promise<LogInAction> =>{
 
     await firebase.loginUser(user)
 
@@ -20,7 +20,7 @@ export const LogIn = async (user:User) =>{
     }
 }
 
-export const Register = async (user:User) =>{
+export const Register = async (user:User): Promise<RegisterAction> =>{
 
     await firebase.registerUser(user)
     await firebase.AddUserDB(user)
@@ -39,7 +39,7 @@ export const LogOut =  ():LogOutAction =>{
     }
 }
 
-export const Edit = async (user:User) =>{
+export const Edit = async (user:User): Promise<EditAction> =>{
 
     await firebase.loginUser(user)
 
@@ -50,7 +50,7 @@ export const Edit = async (user:User) =>{
 }
 
 
-export const AddPost = async (post:Post): Promise<Actions> =>{
+export const AddPost = async (post:Post): Promise<AddPostAction> =>{
 
     await firebase.AddPostDB(post)
 
@@ -60,7 +60,7 @@ export const AddPost = async (post:Post): Promise<Actions> =>{
     }
 }
 
-export const GetPosts = async (): Promise<Actions> =>{
+export const GetPosts = async (): Promise<GetPostsAction> =>{
 
     const posts = await firebase.GetPostsDB()
 
@@ -71,7 +71,7 @@ export const GetPosts = async (): Promise<Actions> =>{
 }
 
 
-export const AddFavorite = async (post:Post): Promise<Actions> =>{
+export const AddFavorite = async (post:Post): Promise<AddFavoriteAction> =>{
 
     await firebase.AddFavoriteDB(post)
 
@@ -81,7 +81,7 @@ export const AddFavorite = async (post:Post): Promise<Actions> =>{
     }
 }
 
-export const GetFavorites = async (): Promise<Actions> =>{
+export const GetFavorites = async (): Promise<GetFavoritesAction> =>{
 
     const posts = await firebase.GetFavoritesDB()
 
@@ -92,7 +92,7 @@ export const GetFavorites = async (): Promise<Actions> =>{
 }
 
 
-export const AddFriend = async (friend:User): Promise<Actions> =>{
+export const AddFriend = async (friend:User): Promise<AddFriendAction> =>{
 
     await firebase.AddFriendDB(friend)
 
@@ -102,7 +102,7 @@ export const AddFriend = async (friend:User): Promise<Actions> =>{
     }
 }
 
-export const GetFriends = async (): Promise<Actions> =>{
+export const GetFriends = async (): Promise<GetFriendsAction> =>{
 
     const friends = await firebase.GetFriendsDB()
 

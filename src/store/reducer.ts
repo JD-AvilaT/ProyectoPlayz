@@ -26,11 +26,12 @@ export const reducer = (Action: Actions, State: AppState): AppState => {
         case UserActions.EDIT:
             State.user = payload
             return State 
-        
 
         case NavigationActions.NAVIGATE:
-            State.screen = payload
-            return State
+            return {
+                ...State,
+                screen: payload,
+            }
             
 
         case PostActions.ADD_POST:
