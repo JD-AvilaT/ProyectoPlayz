@@ -41,7 +41,7 @@ export enum UserActions {
 
 export interface LogInAction {
     action: UserActions.LOGIN,
-    payload: User
+    payload: Omit<User, "id" | "userName" | "img">
 }
 
 export interface LogOutAction {

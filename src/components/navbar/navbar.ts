@@ -38,21 +38,21 @@ class Navbar extends HTMLElement{
                 dispatch(Navigate(Screens.DASHBOARD))
              })
 
-
-            const games = this.ownerDocument.createElement("button")
-            games.className = "games"
-            games.innerText = "Games"
-
             const friends = this.ownerDocument.createElement("button")
             friends.className = "friends"
             friends.innerText = "Friends"
+            friends.addEventListener("click", ()=>{
+                dispatch(Navigate(Screens.FRIENDS))
+             })
 
             const saved = this.ownerDocument.createElement("button")
             saved.className = "saved"
             saved.innerText = "Saved"
+            saved.addEventListener("click", ()=>{
+                dispatch(Navigate(Screens.FAVORITES))
+             })
 
             sections.appendChild(home)
-            sections.appendChild(games)
             sections.appendChild(friends)
             sections.appendChild(saved)
 

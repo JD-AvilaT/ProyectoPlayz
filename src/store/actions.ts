@@ -10,10 +10,10 @@ export const Navigate = (screen:Screens): NavigationAction =>{
     }
 }
 
-export const LogIn = async (user:User): Promise<LogInAction> =>{
+export const LogIn = async (user:Omit<User, "id" | "userName" | "img"> ): Promise<LogInAction> =>{
 
     await firebase.loginUser(user)
-
+    
     return{
         action: UserActions.LOGIN,
         payload: user,

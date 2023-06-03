@@ -5,7 +5,6 @@ export const reducer = (Action: Actions, State: AppState): AppState => {
 
     switch (action) {
         case UserActions.LOGIN:
-            State.user = payload
             return State
             
         case UserActions.REGISTER:

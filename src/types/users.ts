@@ -5,3 +5,5 @@ export interface User {
     password: string,
     img: string,
 }
+
+export type UserCredentials = Omit<User, "id" | "userName" | "img">

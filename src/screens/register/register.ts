@@ -1,5 +1,5 @@
 import "../../components/export"
-import { attribute } from "../../components/infoinputs/infoinputs";
+import { attribute } from "../../components/formreg/formreg";
 
 import styles from "./register.css"
 import { dispatch } from "../../store/index";
