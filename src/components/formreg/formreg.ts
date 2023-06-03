@@ -1,5 +1,6 @@
 import { dispatch } from "../../store";
-import { Register } from "../../store/actions";
+import { Navigate, Register } from "../../store/actions";
+import { Screens } from "../../types/store";
 import styles from "./formreg.css"
 
 const credentials = {
@@ -28,8 +29,6 @@ export default class MyFormReg extends HTMLElement{
         css.innerHTML = styles
         this.shadowRoot?.appendChild(css)
 
-        const container = this.ownerDocument.createElement("section")
-
         const userName = this.ownerDocument.createElement("input")
         userName.placeholder = "Username"
         userName.type = "text"
@@ -55,14 +54,13 @@ export default class MyFormReg extends HTMLElement{
         sendbtn.innerText = "Log in"
         sendbtn.addEventListener("click", async ()=>{
             dispatch(await Register(credentials))
+            dispatch(Navigate(Screens.LOGIN))
         })
 
-        container.appendChild(userName)
-        container.appendChild(email)
-        container.appendChild(password)
-        container.appendChild(sendbtn)
-
-        this.shadowRoot?.appendChild(container)
+        this.shadowRoot?.appendChild(userName)
+        this.shadowRoot?.appendChild(email)
+        this.shadowRoot?.appendChild(password)
+        this.shadowRoot?.appendChild(sendbtn)
 
         }
     }
