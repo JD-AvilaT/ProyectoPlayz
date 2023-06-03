@@ -128,10 +128,47 @@ const GetFavoritesListener = (cb: (docs: Post[]) => void) => {
   };
 
 
-const AddUserDB = async (candidate: User) =>{
+  const AddFriendDB = async (friend: User) =>{
+    try {
+    const where = collection(db, "friends")
+      await addDoc(where,{...friend, createdAt: new Date()});
+      return true
+    } catch (e) {
+      console.error("Error adding document: ", e);
+      return false
+    }
+}
+
+const GetFriendsDB = async(): Promise<User[]> =>{
+    const resp: User[] = [];
+
+    const q=query(collection(db,"friends"), orderBy("createdAt"))
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+      resp.push({
+        ...doc.data()
+      }as User)
+    });
+    return resp
+}
+
+const GetFriendsListener = (cb: (docs: User[]) => void) => {
+    const q = query(collection(db, "friends"), orderBy("createdAt")); 
+    onSnapshot(q, (collection) => {
+      const docs: User[] = collection.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      })) as User[];
+      cb(docs);
+    });
+  };
+
+
+const AddUserDB = async (user: User) =>{
     try {
     const where = collection(db, "users")
-      await addDoc(where,{...candidate, createdAt: new Date()});
+      await addDoc(where,{...user, createdAt: new Date()});
       return true
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -148,6 +185,9 @@ export default{
     AddFavoriteDB,
     GetFavoritesDB,
     GetFavoritesListener,
+    AddFriendDB,
+    GetFriendsDB,
+    GetFriendsListener,
     AddUserDB,
     onAuthStateChanged,
 }

@@ -31,24 +31,30 @@ export interface NavigationAction{
 }
 
 
-export enum AuthActions {
+export enum UserActions {
     "LOGIN" = "LOGIN",
     "REGISTER" = "REGISTER",
     "LOGOUT" = "LOGOUT",
+    "EDIT" = "EDIT"
 }
 
 export interface LogInAction {
-    action: AuthActions.LOGIN,
-    payload: Pick<AppState, "user">
+    action: UserActions.LOGIN,
+    payload: User
 }
 
 export interface LogOutAction {
-    action: AuthActions.LOGOUT,
+    action: UserActions.LOGOUT,
     payload: void
 }
 
 export interface RegisterAction {
-    action: AuthActions.REGISTER,
+    action: UserActions.REGISTER,
+    payload: User
+}
+
+export interface EditAction {
+    action: UserActions.EDIT,
     payload: User
 }
 
@@ -96,4 +102,4 @@ export interface GetFriendsAction {
     payload: User[],
 }
 
-export type Actions = LogInAction | LogOutAction | RegisterAction | NavigationAction | AddPostAction | GetPostsAction | AddFavoriteAction | GetFavoritesAction | AddFriendAction | GetFriendsAction;
+export type Actions = LogInAction | LogOutAction | RegisterAction | EditAction | NavigationAction | AddPostAction | GetPostsAction | AddFavoriteAction | GetFavoritesAction | AddFriendAction | GetFriendsAction;

@@ -1,10 +1,21 @@
 import Storage, { PersistanceKeys } from "../utils/storage";
 import { Actions, AppState, Observer, Screens } from "../types/store";
 import { reducer } from "./reducer";
+import { auth } from "../utils/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 const initialState: AppState = {
-    Users: [],
-    screen: Screens.REGISTER,
+    user: {
+      id: "",
+      userName: "",
+      email: "",
+      password: "",
+      img: "",
+    },
+    screen: Screens.LANDING,
+    posts: [],
+    friends: [],
+    favorites: [],
 };
 
 export let appState = Storage.get<AppState>({
