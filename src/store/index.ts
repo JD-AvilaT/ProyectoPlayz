@@ -5,10 +5,10 @@ import firebase, { auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { LogIn, Navigate, Register, SetUserCredentials } from "./actions";
 
-onAuthStateChanged(auth, async(user) => {
+onAuthStateChanged(auth, async(user:any) => {
   console.log(user)
   if (user) {
-    appState.userCredentials !== null ? dispatch(SetUserCredentials(String(user))): '';
+    appState.userCredentials !== null ? dispatch(SetUserCredentials(user)): '';
     appState.userData.uid = user.uid
     appState.userData.email = String(user.email)
     dispatch(Navigate(Screens.DASHBOARD));
