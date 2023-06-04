@@ -1,5 +1,6 @@
 import { appState, dispatch } from "../../store";
-import {LogIn} from "../../store/actions"
+import {LogIn, Navigate} from "../../store/actions"
+import { Screens } from "../../types/store";
 import firebase from "../../utils/firebase";
 import styles from "./formlog.css"
 
