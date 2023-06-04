@@ -1,6 +1,6 @@
 import "../../components/export"
-import MyPublications, { Attribute1 } from "../../components/publicationcard/publicationcard";
-
+import { dispatch } from "../../store";
+import { GetPosts } from "../../store/actions";
 import styles from "./index.css"
 
 
@@ -10,7 +10,8 @@ export default class AppDashboard extends HTMLElement {
         this.attachShadow({ mode: "open" });
         }
 
-        connectedCallback() {
+        async connectedCallback() {
+            dispatch(await GetPosts())
             this.render();
         }
         
@@ -30,23 +31,8 @@ export default class AppDashboard extends HTMLElement {
                 main.appendChild(navbar)
                 main.appendChild(publicate)
 
-                const publicationsSection = this.ownerDocument.createElement("section")
+                const publicationsSection = this.ownerDocument.createElement("my-publications")
                 publicationsSection.className = 'publications';
-                
-                // publication.forEach((publication:any)=>{
-                //     const publicationCard = this.ownerDocument.createElement(
-                //         "my-publication"
-                //         ) as MyPublications;
-                //         publicationCard.setAttribute(Attribute1.imgprofile, publication.imgprofile);
-                //         publicationCard.setAttribute(Attribute1.name, publication.name);
-                //         publicationCard.setAttribute(Attribute1.username, publication.username);
-                //         publicationCard.setAttribute(Attribute1.description, publication.description);
-                //         publicationCard.setAttribute(Attribute1.video, publication.video);
-
-                 
-                //     publicationsSection.appendChild(publicationCard);
-                // })
-                
                 main.appendChild(publicationsSection)
 
                 this.shadowRoot?.appendChild(main)

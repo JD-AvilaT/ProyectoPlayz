@@ -32,6 +32,16 @@ class AppContainer extends HTMLElement {
                 this.shadowRoot?.appendChild(dashboard);
                 break;
 
+            case Screens.FAVORITES:
+                const favorites = this.ownerDocument.createElement('app-favorites');
+                this.shadowRoot?.appendChild(favorites);
+                break;
+
+            case Screens.FRIENDS:
+                const friends = this.ownerDocument.createElement('my-friends');
+                this.shadowRoot?.appendChild(friends);
+                break;
+
             case Screens.PROFILE:
                 const profile = this.ownerDocument.createElement('app-profile');
                 this.shadowRoot?.appendChild(profile);

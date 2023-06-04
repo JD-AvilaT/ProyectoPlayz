@@ -5,9 +5,10 @@ import { Edit, LogOut, Navigate} from "../../store/actions"
 import { Screens } from "../../types/store";
 
 const credentials = { 
+    uid:appState.userData.uid,
     userName: "",
-    email: "",
-    password: "",
+    email: appState.userData.email,
+    password: appState.userData.password,
     img: "",
 }
 
@@ -41,7 +42,7 @@ export default class AppProfile extends HTMLElement {
 
             const profilePicture = this.ownerDocument.createElement("img");
             profilePicture.className = "profilePicture";
-            //profilePicture.src = appState.userData.img;
+            profilePicture.src = appState.userData.img;
             editProfile.appendChild(profilePicture);
 
             const newPicture = this.ownerDocument.createElement("input");
@@ -57,22 +58,12 @@ export default class AppProfile extends HTMLElement {
             userName.addEventListener("change", (e:any)=>credentials.userName = e.target.value);
             form.appendChild(userName);
 
-            const email = this.ownerDocument.createElement('input');
-            email.placeholder = appState.userData.email
-            email.addEventListener("change", (e:any)=>credentials.email = e.target.value);
-            form.appendChild(email);
-
-            const password = this.ownerDocument.createElement('input');
-            password.placeholder = "****************"
-            password.addEventListener("change", (e:any)=>credentials.password = e.target.value);
-            form.appendChild(password);
-
             const confirm = this.ownerDocument.createElement('button');
             confirm.textContent = "Confirm";
             confirm.className = "confirm";
-            // confirm.addEventListener("click", async()=>{
-            //     dispatch(await Edit(credentials))
-            // })
+            confirm.addEventListener("click", async()=>{
+                 dispatch(await Edit(credentials))
+             })
             form.appendChild(confirm);
             
             const button = this.ownerDocument.createElement('button');
