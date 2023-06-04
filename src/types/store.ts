@@ -13,7 +13,6 @@ export type AppState = {
 }
 
 export enum Screens{
-    LANDING = "LANDING",
     LOGIN = "LOGIN",
     REGISTER = "REGISTER",
     DASHBOARD = "DASHBOARD",
@@ -33,26 +32,20 @@ export interface NavigationAction{
 
 
 export enum UserActions {
-    "LOGIN" = "LOGIN",
-    "REGISTER" = "REGISTER",
+    "ADD_USER" = "ADD_USER",
     "LOGOUT" = "LOGOUT",
     "EDIT" = "EDIT",
     "SET_USER" = "SET_USER"
 }
 
-export interface LogInAction {
-    action: UserActions.LOGIN,
+export interface AddUserAction {
+    action: UserActions.ADD_USER,
     payload: User
 }
 
 export interface LogOutAction {
     action: UserActions.LOGOUT,
     payload: void
-}
-
-export interface RegisterAction {
-    action: UserActions.REGISTER,
-    payload: User
 }
 
 export interface EditAction {
@@ -109,4 +102,4 @@ export interface GetFriendsAction {
     payload: User[],
 }
 
-export type Actions = LogInAction | LogOutAction | RegisterAction | EditAction | SetUserAction | NavigationAction | AddPostAction | GetPostsAction | AddFavoriteAction | GetFavoritesAction | AddFriendAction | GetFriendsAction;
+export type Actions = AddUserAction | LogOutAction | EditAction | SetUserAction | NavigationAction | AddPostAction | GetPostsAction | AddFavoriteAction | GetFavoritesAction | AddFriendAction | GetFriendsAction;

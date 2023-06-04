@@ -4,14 +4,10 @@ export const reducer = (Action: Actions, State: AppState): AppState => {
     const { action, payload } = Action; 
 
     switch (action) {
-        case UserActions.LOGIN:
+        case UserActions.ADD_USER:
             State.userData = payload
             return State
             
-        case UserActions.REGISTER:
-            State.userData = payload
-            return State 
-
         case UserActions.LOGOUT: 
             return {
                 ...State , userCredentials:""

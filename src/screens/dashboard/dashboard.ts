@@ -1,6 +1,7 @@
 import "../../components/export"
-import { dispatch } from "../../store";
+import { appState, dispatch } from "../../store";
 import { GetPosts } from "../../store/actions";
+import firebase from "../../utils/firebase";
 import styles from "./index.css"
 
 
@@ -10,11 +11,13 @@ export default class AppDashboard extends HTMLElement {
         this.attachShadow({ mode: "open" });
         }
 
-         connectedCallback() {
+         async connectedCallback() {
             //dispatch(await GetPosts())
+            await firebase.AddUserDB(appState.userData)
             this.render();
         }
         
+
         render() {
             if (this.shadowRoot) {
                 const css = this.ownerDocument.createElement('style')

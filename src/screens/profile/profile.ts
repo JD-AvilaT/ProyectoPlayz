@@ -13,7 +13,7 @@ const credentials = {
 }
 
 export default class AppProfile extends HTMLElement {
-    constructor(){
+    constructor(){  
         super();
         this.attachShadow({mode: "open"})
     }

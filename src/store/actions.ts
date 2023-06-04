@@ -1,6 +1,6 @@
 import { appState, dispatch } from "."
 import { Post } from "../types/post"
-import {  Actions, UserActions, PostActions, NavigationActions, FriendsActions, LogInAction, LogOutAction, AddFavoriteAction, AddFriendAction, NavigationAction, Screens, RegisterAction, EditAction, GetFriendsAction, GetFavoritesAction, GetPostsAction, AddPostAction, SetUserAction } from "../types/store"
+import {  Actions, UserActions, PostActions, NavigationActions, FriendsActions, AddUserAction, LogOutAction, AddFavoriteAction, AddFriendAction, NavigationAction, Screens, EditAction, GetFriendsAction, GetFavoritesAction, GetPostsAction, AddPostAction, SetUserAction } from "../types/store"
 import { User } from "../types/users"
 import firebase from "../utils/firebase"
 
@@ -11,24 +11,10 @@ export const Navigate = (screen:Screens): NavigationAction =>{
     }
 }
 
-export const LogIn = async (user:User ): Promise<LogInAction> =>{
-
-    await firebase.loginUser(user)
-    
-    return{
-        action: UserActions.LOGIN,
-        payload: user,
-    }
-}
-
-export const Register = async (user:User): Promise<RegisterAction> =>{
-
-    const data = await firebase.registerUser(user);
-    if(data){
-        await firebase.AddUserDB(data)} 
+export const AddUser = (user:User): AddUserAction =>{
 
     return{
-        action: UserActions.REGISTER,
+        action: UserActions.ADD_USER,
         payload: user,
     }
 }
