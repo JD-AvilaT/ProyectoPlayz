@@ -4,7 +4,7 @@ import MyPublications, { Attribute1 } from "../../components/publicationcard/pub
 import styles from "./index.css"
 
 
-class AppDashboard extends HTMLElement {
+export default class AppDashboard extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });

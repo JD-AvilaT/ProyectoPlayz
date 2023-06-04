@@ -12,7 +12,7 @@ onAuthStateChanged(auth, async(user) => {
     appState.user !== null ? dispatch(await LogIn (appState.user)) : '';
     dispatch(Navigate(Screens.DASHBOARD));
   } else {
-    dispatch(Navigate(Screens.LOGIN));
+    dispatch(Navigate(Screens.REGISTER));
   }
 });
 
@@ -24,7 +24,7 @@ const initialState: AppState = {
       password: "",
       img: "",
     },
-    screen: Screens.LANDING,
+    screen: Screens.REGISTER,
     posts: [],
     friends: [],
     favorites: [],

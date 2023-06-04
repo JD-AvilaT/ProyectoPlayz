@@ -12,7 +12,7 @@ const credentials = {
     img: "",
 }
 
-class AppProfile extends HTMLElement {
+export default class AppProfile extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"})

@@ -1,9 +1,6 @@
-import "./screens/dashboard/dashboard"
-import "./screens/register/register"
-import "./screens/profile/profile"
-import "./components/export"
 import { addObserver, appState } from "./store/index";
 import { Screens } from "./types/store";
+import "./screens/export"
 
 class AppContainer extends HTMLElement {
     constructor(){

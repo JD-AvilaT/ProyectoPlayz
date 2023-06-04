@@ -6,7 +6,7 @@ import {Navigate} from "../../store/actions"
 import { Screens } from "../../types/store";
 
 
-class AppRegister extends HTMLElement {
+export default class AppRegister extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"})
