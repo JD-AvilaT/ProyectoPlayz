@@ -1,4 +1,4 @@
-import { navigate } from "../../store/actions";
+import { Navigate } from "../../store/actions";
 import { dispatch } from "../../store/index";
 import { Screens } from "../../types/store";
 import styles from "./navbar.css"
@@ -35,24 +35,24 @@ class Navbar extends HTMLElement{
             home.className = "home"
             home.innerText = "Home"
             home.addEventListener("click", ()=>{
-                dispatch(navigate(Screens.DASHBOARD))
+                dispatch(Navigate(Screens.DASHBOARD))
              })
-
-
-            const games = this.ownerDocument.createElement("button")
-            games.className = "games"
-            games.innerText = "Games"
 
             const friends = this.ownerDocument.createElement("button")
             friends.className = "friends"
             friends.innerText = "Friends"
+            friends.addEventListener("click", ()=>{
+                dispatch(Navigate(Screens.FRIENDS))
+             })
 
             const saved = this.ownerDocument.createElement("button")
             saved.className = "saved"
             saved.innerText = "Saved"
+            saved.addEventListener("click", ()=>{
+                dispatch(Navigate(Screens.FAVORITES))
+             })
 
             sections.appendChild(home)
-            sections.appendChild(games)
             sections.appendChild(friends)
             sections.appendChild(saved)
 
@@ -62,7 +62,7 @@ class Navbar extends HTMLElement{
             const profilebtn = this.ownerDocument.createElement("button")
             profilebtn.className = "btnprofile"
             profilebtn.addEventListener("click", ()=>{
-                dispatch(navigate(Screens.PROFILE))
+                dispatch(Navigate(Screens.PROFILE))
              })
 
             const profileImg = this.ownerDocument.createElement("img")

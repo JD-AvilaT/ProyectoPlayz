@@ -9,7 +9,7 @@ const get = <T>({
     key: PersistanceKeys;
     defaultValue: T;
   }): T => {
-    const keyValue = localStorage.getItem(key)
+    const keyValue = localStorage.getItem(key) || sessionStorage.getItem(key)
     return keyValue ? JSON.parse(keyValue) : defaultValue;
   };
   

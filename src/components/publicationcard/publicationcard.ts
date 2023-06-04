@@ -2,7 +2,6 @@ import styles from "./publicationcard.css"
 
 export enum Attribute1 {
     "imgprofile" = "imgprofile",
-    "name" = "name",
     "username" = "username",
     "description" = "description",
     "video" = "video",
@@ -10,7 +9,6 @@ export enum Attribute1 {
 
 class MyPublications extends HTMLElement {
     imgprofile?: string;
-    name?: string;
     username?: string;
     description?: string;
     video?: string;
@@ -18,7 +16,6 @@ class MyPublications extends HTMLElement {
     static get observedAttributes() {
         const attrs: Record<Attribute1, null> = {
             imgprofile: null,
-            name: null,
             username: null,
             description: null,
             video: null,
@@ -56,8 +53,7 @@ class MyPublications extends HTMLElement {
                     <section class="profile">
                         <img src="${this.imgprofile}">
                         <section>
-                            <h3>${this.name}</h3>
-                            <p>${this.username}</p>
+                            <h3>${this.username}</h3>
                         </section>
                     </section>
                     <p class="description">${this.description}</p>
