@@ -10,8 +10,8 @@ export default class AppDashboard extends HTMLElement {
         this.attachShadow({ mode: "open" });
         }
 
-        async connectedCallback() {
-            dispatch(await GetPosts())
+         connectedCallback() {
+            //dispatch(await GetPosts())
             this.render();
         }
         

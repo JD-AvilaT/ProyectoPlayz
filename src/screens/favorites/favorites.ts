@@ -10,8 +10,8 @@ export default class AppFavorites extends HTMLElement {
         this.attachShadow({ mode: "open" });
         }
 
-        async connectedCallback() {
-            dispatch(await GetFavorites())
+         connectedCallback() {
+            //dispatch(await GetFavorites())
             this.render();
         }
         

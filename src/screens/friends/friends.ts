@@ -11,8 +11,8 @@ export default class AppFriends extends HTMLElement {
         this.attachShadow({ mode: "open" });
         }
 
-        async connectedCallback() {
-            dispatch(await GetFriends())
+         connectedCallback() {
+            //dispatch(await GetFriends())
             this.render();
         }
         
@@ -40,4 +40,4 @@ export default class AppFriends extends HTMLElement {
         }
     }
     
-customElements.define("my-friends", AppFriends);
+customElements.define("app-friends", AppFriends);

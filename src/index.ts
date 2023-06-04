@@ -38,7 +38,7 @@ class AppContainer extends HTMLElement {
                 break;
 
             case Screens.FRIENDS:
-                const friends = this.ownerDocument.createElement('my-friends');
+                const friends = this.ownerDocument.createElement('app-friends');
                 this.shadowRoot?.appendChild(friends);
                 break;
 
