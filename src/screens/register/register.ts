@@ -27,20 +27,32 @@ export default class AppRegister extends HTMLElement {
             const container = this.ownerDocument.createElement("section")
             container.className = "container"
 
+            const intro = this.ownerDocument.createElement('section');
+            intro.className = "intro"
+
+            const hello = this.ownerDocument.createElement("h1");
+            hello.textContent = "Hello,";
+
+            const gamer = this.ownerDocument.createElement("h1");
+            hello.textContent = "gamer.";
+
             const form = this.ownerDocument.createElement('section');
             form.className = "form"
 
-            const campsForm = this.ownerDocument.createElement("form-register")
+            const campsForm = this.ownerDocument.createElement("form-register");
 
             const account = this.ownerDocument.createElement('button');
-            account.innerText = 'Already have an account?';
+            account.innerText = 'Have already an account?';
             account.addEventListener("click", ()=>{
                 dispatch(Navigate(Screens.LOGIN))
             })
 
-            form.appendChild(campsForm)
+            form.appendChild(campsForm);
             form.appendChild(account);
-            container.appendChild(form)
+            intro.appendChild(hello);
+            intro.appendChild(gamer);
+            container.appendChild(intro);
+            container.appendChild(form);
             this.shadowRoot?.appendChild(container);
 
 

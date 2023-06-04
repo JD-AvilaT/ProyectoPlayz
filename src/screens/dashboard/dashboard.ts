@@ -1,5 +1,5 @@
 import "../../components/export"
-import MyPublications, { Attribute1 } from "../../components/publicationcard/publicationcard";
+import PublicationsCards, { Attribute1 } from "../../components/publicationcards/publicationcards";
 
 import styles from "./index.css"
 
