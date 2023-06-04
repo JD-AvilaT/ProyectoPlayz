@@ -4,11 +4,12 @@ import { User } from "./users";
 export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
-    user: User,
+    userCredentials: string,
     screen: Screens,
     posts: Post[],
     friends: User[],
     favorites: Post[],
+    userData: User,
 }
 
 export enum Screens{

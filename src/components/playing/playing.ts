@@ -5,8 +5,8 @@ import styles from "./playing.css"
 
 const post: Post = {
     id:"",
-    imgprofile: appState.user.img,
-    username: appState.user.userName,
+    imgprofile: "",
+    username: "",
     description: "",
     video: "",
     createdAt: "",
@@ -49,7 +49,7 @@ class Playing extends HTMLElement{
         const container = this.ownerDocument.createElement("section")
 
         const imgprofile = this.ownerDocument.createElement("img")
-        imgprofile.src = appState.user.img
+        // imgprofile.src = appState.user.img
 
         const descriptionPost = this.ownerDocument.createElement("input")
         descriptionPost.placeholder = "What are you playing?"

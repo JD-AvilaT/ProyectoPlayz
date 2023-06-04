@@ -22,6 +22,11 @@ class AppContainer extends HTMLElement {
                 this.shadowRoot?.appendChild(register);
                 break;
 
+            case Screens.LOGIN:
+                const login = this.ownerDocument.createElement('app-login');
+                this.shadowRoot?.appendChild(login);
+                break;
+
             case Screens.DASHBOARD:
                 const dashboard = this.ownerDocument.createElement('app-dashboard');
                 this.shadowRoot?.appendChild(dashboard);

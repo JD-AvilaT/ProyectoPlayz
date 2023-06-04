@@ -1,11 +1,10 @@
 import "../../components/export"
 import styles from "./profile.css"
 import { appState, dispatch } from "../../store/index";
-import {Edit, LogOut, Navigate} from "../../store/actions"
+import { Edit, LogOut, Navigate} from "../../store/actions"
 import { Screens } from "../../types/store";
 
 const credentials = { 
-    id: appState.user.id,
     userName: "",
     email: "",
     password: "",
@@ -42,7 +41,7 @@ export default class AppProfile extends HTMLElement {
 
             const profilePicture = this.ownerDocument.createElement("img");
             profilePicture.className = "profilePicture";
-            profilePicture.src = appState.user.img;
+            //profilePicture.src = appState.userData.img;
             editProfile.appendChild(profilePicture);
 
             const newPicture = this.ownerDocument.createElement("input");
@@ -54,12 +53,12 @@ export default class AppProfile extends HTMLElement {
             form.className = "form"
 
             const userName = this.ownerDocument.createElement("input");
-            userName.placeholder = appState.user.userName
+            userName.placeholder = appState.userData.userName
             userName.addEventListener("change", (e:any)=>credentials.userName = e.target.value);
             form.appendChild(userName);
 
             const email = this.ownerDocument.createElement('input');
-            email.placeholder = appState.user.email
+            email.placeholder = appState.userData.email
             email.addEventListener("change", (e:any)=>credentials.email = e.target.value);
             form.appendChild(email);
 
@@ -71,16 +70,15 @@ export default class AppProfile extends HTMLElement {
             const confirm = this.ownerDocument.createElement('button');
             confirm.textContent = "Confirm";
             confirm.className = "confirm";
-            confirm.addEventListener("click", async()=>{
-                dispatch(await Edit(credentials))
-            })
+            // confirm.addEventListener("click", async()=>{
+            //     dispatch(await Edit(credentials))
+            // })
             form.appendChild(confirm);
             
             const button = this.ownerDocument.createElement('button');
             button.innerText = 'Log Out';
             button.className = "logOut";
              button.addEventListener("click", ()=>{
-                dispatch(Navigate(Screens.LOGIN))
                 dispatch(LogOut())
              })
 
