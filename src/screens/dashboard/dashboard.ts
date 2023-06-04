@@ -4,6 +4,13 @@ import { GetPosts } from "../../store/actions";
 import firebase from "../../utils/firebase";
 import styles from "./index.css"
 
+const credentials = {
+    uid: appState.userData.uid,
+    userName: appState.userData.userName,
+    email: appState.userData.email,
+    password: appState.userData.password,
+    img: appState.userData.img,
+}
 
 export default class AppDashboard extends HTMLElement {
     constructor() {
@@ -13,7 +20,7 @@ export default class AppDashboard extends HTMLElement {
 
          async connectedCallback() {
             //dispatch(await GetPosts())
-            await firebase.AddUserDB(appState.userData)
+            await firebase.AddUserDB(credentials)
             this.render();
         }
         
