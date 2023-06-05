@@ -42,7 +42,7 @@ class PublicationsCards extends HTMLElement {
             if(this.shadowRoot) this.shadowRoot.innerHTML=""
             const container = this.ownerDocument.createElement('section');
 
-            appState.posts.forEach((p)=>{
+            appState.posts.forEach((p:any)=>{
                 const all = this.ownerDocument.createElement("section");
                 all.className = 'all';
 

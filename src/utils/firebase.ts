@@ -122,7 +122,7 @@ const EditUserDB = async (user: any) =>{
 const AddFavoriteDB = async (favorite: Post) =>{
   try {
     const main = collection(db, `users/${appState.userData.uid}/favorites`) 
-  await addDoc(main,{...favorite, createdAt: new Date()});
+    await addDoc(main,{...favorite, createdAt: new Date()});
     return true
   } catch (e) {
     console.error("Error adding document: ", e);
