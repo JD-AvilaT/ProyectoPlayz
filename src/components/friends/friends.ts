@@ -1,31 +1,13 @@
-import { appState, dispatch } from "../../store";
+import { addObserver, appState, dispatch } from "../../store";
 import { User } from "../../types/users";
 import styles from "./friends.css"
 
-export enum Attribute2 {
-    "id" = "id",
-    "imgprofile" = "imgprofile",
-    "username" = "username"
-}
-
 class Friends extends HTMLElement{
-
-    uid?: string;
-    imgprofile?: string;
-    username?: string;
-    
-    static get observedAttributes() {
-        const attrs: Record<Attribute2, null> = {
-            id: null,
-            imgprofile: null,
-            username: null
-        };
-        return Object.keys(attrs);
-    }
     
     constructor(){
         super();
         this.attachShadow({mode:"open"});
+        addObserver(this)
     }
 
     connectedCallback(){
@@ -33,7 +15,7 @@ class Friends extends HTMLElement{
     }
 
     render(){
-        if (this.shadowRoot){
+        if(this.shadowRoot) this.shadowRoot.innerHTML=""
 
             const css = this.ownerDocument.createElement('style')
         css.innerHTML = styles
@@ -41,20 +23,27 @@ class Friends extends HTMLElement{
 
         const container = this.ownerDocument.createElement("section")
 
-        const imgprofile = this.ownerDocument.createElement("img")
-        imgprofile.src = appState.userData.img
-
-        const username = this.ownerDocument.createElement("p")
-        username.textContent = appState.userData.userName
-
-        container.appendChild(imgprofile)
-        container.appendChild(username)
+        appState.friends.forEach((p)=>{
+            
+            const card = this.ownerDocument.createElement("section")
+    
+            const imgprofile = this.ownerDocument.createElement("img")
+            imgprofile.src = p.img
+    
+            const username = this.ownerDocument.createElement("p")
+            username.textContent = p.userName
+    
+            card.appendChild(imgprofile)
+            card.appendChild(username)
+    
+            container.appendChild(card)
+            })
 
         this.shadowRoot?.appendChild(container)
         
         }
     }
-}
+
 
 customElements.define("my-friends",Friends);
 export default Friends;
