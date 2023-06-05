@@ -42,7 +42,7 @@ class PublicationsCards extends HTMLElement {
             if(this.shadowRoot) this.shadowRoot.innerHTML=""
             const container = this.ownerDocument.createElement('section');
 
-            appState.posts.forEach((p)=>{
+            for(let i=0; i<appState.posts.length; i++){
                 const all = this.ownerDocument.createElement("section");
                 all.className = 'all';
 
@@ -51,18 +51,18 @@ class PublicationsCards extends HTMLElement {
                 all.appendChild(profile);
 
                 const imgProfile = this.ownerDocument.createElement("img");
-                imgProfile.src = p.imgprofile;
+                imgProfile.src = appState.posts[i].imgprofile;
                 profile.appendChild(imgProfile);
-                dataPost.imgprofile = p.imgprofile
-                dataFriend.img = p.imgprofile
+                dataPost.imgprofile = appState.posts[i].imgprofile
+                dataFriend.img = appState.posts[i].imgprofile
 
                 const userName = this.ownerDocument.createElement("h3");
-                userName.textContent = p.username;
+                userName.textContent = appState.posts[i].username;
                 profile.appendChild(userName);
-                dataPost.username = p.username
-                dataPost.id = p.id
-                dataPost.createdAt = p.createdAt
-                dataFriend.userName = p.username
+                dataPost.username = appState.posts[i].username
+                dataPost.id = appState.posts[i].id
+                dataPost.createdAt = appState.posts[i].createdAt
+                dataFriend.userName = appState.posts[i].username
 
                 const follow = this.ownerDocument.createElement("button");
                 follow.innerText = "Add Friend"
@@ -73,14 +73,14 @@ class PublicationsCards extends HTMLElement {
 
                 
                 const description = this.ownerDocument.createElement("p");
-                description.textContent = p.description;
+                description.textContent = appState.posts[i].description;
                 all.appendChild(description);
-                dataPost.description = p.description
+                dataPost.description = appState.posts[i].description
 
                 const video = this.ownerDocument.createElement("iframe");
-                video.src = p.video;
+                video.src = appState.posts[i].video
                 all.appendChild(video);
-                dataPost.video = p.video
+                dataPost.video = appState.posts[i].video
                 
                 const likeAppart = this.ownerDocument.createElement("section");
                 likeAppart.className = "likeAppart";
@@ -104,7 +104,7 @@ class PublicationsCards extends HTMLElement {
                 likeAppart.appendChild(save);
 
                 container.appendChild(all)
-            })
+            }
             const css = this.ownerDocument.createElement('style')
             css.innerHTML = styles
             this.shadowRoot?.appendChild(css)
