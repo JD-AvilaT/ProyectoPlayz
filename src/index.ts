@@ -1,9 +1,6 @@
-import "./screens/dashboard/dashboard"
-import "./screens/register/register"
-import "./screens/profile/profile"
-import "./components/export"
 import { addObserver, appState } from "./store/index";
 import { Screens } from "./types/store";
+import "./screens/export"
 
 class AppContainer extends HTMLElement {
     constructor(){
@@ -25,9 +22,24 @@ class AppContainer extends HTMLElement {
                 this.shadowRoot?.appendChild(register);
                 break;
 
+            case Screens.LOGIN:
+                const login = this.ownerDocument.createElement('app-login');
+                this.shadowRoot?.appendChild(login);
+                break;
+
             case Screens.DASHBOARD:
                 const dashboard = this.ownerDocument.createElement('app-dashboard');
                 this.shadowRoot?.appendChild(dashboard);
+                break;
+
+            case Screens.FAVORITES:
+                const favorites = this.ownerDocument.createElement('app-favorites');
+                this.shadowRoot?.appendChild(favorites);
+                break;
+
+            case Screens.FRIENDS:
+                const friends = this.ownerDocument.createElement('app-friends');
+                this.shadowRoot?.appendChild(friends);
                 break;
 
             case Screens.PROFILE:

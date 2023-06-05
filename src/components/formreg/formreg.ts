@@ -1,10 +1,12 @@
-import { dispatch } from "../../store";
-import { Navigate, Register } from "../../store/actions";
+import { User } from "firebase/auth";
+import { appState, dispatch } from "../../store";
+import { AddUser, Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
+import firebase from "../../utils/firebase";
 import styles from "./formreg.css"
 
 const credentials = {
-    id: "",
+    uid: "",
     userName: "",
     email: "",
     password: "",
@@ -51,10 +53,15 @@ export default class MyFormReg extends HTMLElement{
         })
 
         const sendbtn = this.ownerDocument.createElement("button")
-        sendbtn.innerText = "Log in"
+        sendbtn.innerText = "Register"
         sendbtn.addEventListener("click", async ()=>{
-            dispatch(await Register(credentials))
-            dispatch(Navigate(Screens.LOGIN))
+            const user = await firebase.registerUser(credentials)
+            dispatch(AddUser(credentials))
+            console.log(user);
+            if(user){
+                dispatch(Navigate(Screens.LOGIN))
+                sessionStorage.clear()
+            }
         })
 
         this.shadowRoot?.appendChild(userName)

@@ -1,20 +1,56 @@
-import { addObserver, appState } from "../../store";
-import styles from "./publicationcard.css"
+import { appState } from "../../store";
+import styles from "./publicationcards.css"
+
+export enum Attribute1 {
+    "imgprofile" = "imgprofile",
+    "username" = "username",
+    "description" = "description",
+    "video" = "video",
+}
 
 class PublicationsCards extends HTMLElement {
+    imgprofile?: string;
+    username?: string;
+    description?: string;
+    video?: string;
+    
+    static get observedAttributes() {
+        const attrs: Record<Attribute1, null> = {
+            imgprofile: null,
+            username: null,
+            description: null,
+            video: null,
+        };
+        return Object.keys(attrs);
+    }
+    
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
-        addObserver(this)
     }
     
     connectedCallback() {
         this.render();
     }
-       
+    
+    attributeChangedCallback(
+        propName: Attribute1,
+        _: string | undefined,
+        newValue: string | undefined
+        ) {
+            switch (propName) {
+                default:
+                this[propName] = newValue;
+                break;
+            }
+            
+            this.render();
+        }
+        
         render() {
             if(this.shadowRoot) this.shadowRoot.innerHTML=""
             const container = this.ownerDocument.createElement('section');
+
 
             appState.posts.forEach((p)=>{
                 const all = this.ownerDocument.createElement("section");
@@ -25,20 +61,12 @@ class PublicationsCards extends HTMLElement {
                 all.appendChild(profile);
 
                 const imgProfile = this.ownerDocument.createElement("img");
-                imgProfile.src = appState.userData.img;
+                imgProfile.src = appState.user.img;
                 profile.appendChild(imgProfile);
 
                 const userName = this.ownerDocument.createElement("h3");
-                userName.textContent = appState.userData.userName;
+                userName.textContent = appState.user.userName;
                 profile.appendChild(userName);
-                
-                const addFriend = this.ownerDocument.createElement("button");
-                addFriend.textContent = `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M12 5l0 14"></path>
-                <path d="M5 12l14 0"></path>
-             </svg>`;
-                profile.appendChild(addFriend);
                 
                 const description = this.ownerDocument.createElement("p");
                 description.textContent = p.description;
@@ -66,15 +94,13 @@ class PublicationsCards extends HTMLElement {
                 </svg>`;
                 likeAppart.appendChild(save);
 
-                container.appendChild(all)
+
             })
             const css = this.ownerDocument.createElement('style')
             css.innerHTML = styles
             this.shadowRoot?.appendChild(css)
-
-            this.shadowRoot?.appendChild(container)
         }
     }
     
-customElements.define("my-publications", PublicationsCards);
+customElements.define("my-publication", PublicationsCards);
 export default PublicationsCards;

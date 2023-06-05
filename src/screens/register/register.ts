@@ -6,7 +6,7 @@ import {Navigate} from "../../store/actions"
 import { Screens } from "../../types/store";
 
 
-class AppRegister extends HTMLElement {
+export default class AppRegister extends HTMLElement {
     constructor(){
         super();
         this.attachShadow({mode: "open"})
@@ -27,6 +27,15 @@ class AppRegister extends HTMLElement {
             const container = this.ownerDocument.createElement("section")
             container.className = "container"
 
+            const intro = this.ownerDocument.createElement('section');
+            intro.className = "intro"
+
+            const hello = this.ownerDocument.createElement("h1");
+            hello.textContent = "Hello,";
+
+            const gamer = this.ownerDocument.createElement("h1");
+            hello.textContent = "gamer.";
+
             const form = this.ownerDocument.createElement('section');
             form.className = "form"
 
@@ -38,12 +47,13 @@ class AppRegister extends HTMLElement {
                 dispatch(Navigate(Screens.LOGIN))
             })
 
-            form.appendChild(campsForm)
+            form.appendChild(campsForm);
             form.appendChild(account);
-            container.appendChild(form)
+            intro.appendChild(hello);
+            intro.appendChild(gamer);
+            container.appendChild(intro);
+            container.appendChild(form);
             this.shadowRoot?.appendChild(container);
-
-
         }
     }
 }
