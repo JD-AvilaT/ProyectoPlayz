@@ -31,6 +31,13 @@ export default class MyFormReg extends HTMLElement{
         css.innerHTML = styles
         this.shadowRoot?.appendChild(css)
 
+        const userImg = this.ownerDocument.createElement("input")
+        userImg.placeholder = "Your picture"
+        userImg.type = "text"
+        userImg.addEventListener("change", (e:any)=>{
+            credentials.img = e.target.value
+        })
+
         const userName = this.ownerDocument.createElement("input")
         userName.placeholder = "Username"
         userName.type = "text"
