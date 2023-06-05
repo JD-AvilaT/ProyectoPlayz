@@ -1,4 +1,5 @@
 import { addObserver, appState, dispatch } from "../../store";
+import { GetFriends } from "../../store/actions";
 import { User } from "../../types/users";
 import styles from "./friends.css"
 
@@ -10,8 +11,13 @@ class Friends extends HTMLElement{
         addObserver(this)
     }
 
-    connectedCallback(){
+    async connectedCallback() {
+        if(appState.friends.length ===0){
+        dispatch(await GetFriends())
         this.render();
+    }else{
+        this.render()
+    }
     }
 
     render(){

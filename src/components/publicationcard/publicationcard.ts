@@ -1,6 +1,6 @@
 
 import { addObserver, appState, dispatch } from "../../store";
-import { AddFavorite, GetPosts } from "../../store/actions";
+import { AddFavorite, AddFriend, GetPosts } from "../../store/actions";
 import { Post } from "../../types/post";
 import { User } from "../../types/users";
 import styles from "./publicationcard.css"
@@ -63,6 +63,14 @@ class PublicationsCards extends HTMLElement {
                 dataPost.id = p.id
                 dataPost.createdAt = p.createdAt
                 dataFriend.userName = p.username
+
+                const follow = this.ownerDocument.createElement("button");
+                follow.innerText = "Add Friend"
+                follow.addEventListener("click",async()=>{
+                    dispatch(await AddFriend(dataFriend))
+                })
+                profile.appendChild(follow)
+
                 
                 const description = this.ownerDocument.createElement("p");
                 description.textContent = p.description;
