@@ -1,5 +1,16 @@
-import { addObserver, appState } from "../../store";
+import { addObserver, appState, dispatch } from "../../store";
+import { AddFavorite, GetPosts } from "../../store/actions";
+import { Post } from "../../types/post";
 import styles from "./publicationcard.css"
+
+const dataPost: Post = {
+    id: "",
+    imgprofile: "",
+    username: "",
+    description: "",
+    video: "",
+    createdAt: "",
+}
 
 class PublicationsCards extends HTMLElement {
     constructor() {
@@ -8,8 +19,13 @@ class PublicationsCards extends HTMLElement {
         addObserver(this)
     }
     
-    connectedCallback() {
+    async connectedCallback() {
+        if(appState.posts.length ===0){
+        dispatch(await GetPosts())
         this.render();
+    }else{
+        this.render()
+    }
     }
        
         render() {
@@ -27,18 +43,24 @@ class PublicationsCards extends HTMLElement {
                 const imgProfile = this.ownerDocument.createElement("img");
                 imgProfile.src = appState.userData.img;
                 profile.appendChild(imgProfile);
+                dataPost.imgprofile = p.imgprofile
 
                 const userName = this.ownerDocument.createElement("h3");
                 userName.textContent = appState.userData.userName;
                 profile.appendChild(userName);
+                dataPost.username = p.username
+                dataPost.id = p.id
+                dataPost.createdAt = p.createdAt
                 
                 const description = this.ownerDocument.createElement("p");
                 description.textContent = p.description;
                 all.appendChild(description);
+                dataPost.description = p.description
 
                 const video = this.ownerDocument.createElement("iframe");
                 video.src = p.video;
                 all.appendChild(video);
+                dataPost.video = p.video
                 
                 const likeAppart = this.ownerDocument.createElement("section");
                 likeAppart.className = "likeAppart";
@@ -56,6 +78,9 @@ class PublicationsCards extends HTMLElement {
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"></path>
                 </svg>`;
+                save.addEventListener("click",async()=>{
+                    dispatch(await AddFavorite(dataPost))
+                })
                 likeAppart.appendChild(save);
 
                 container.appendChild(all)

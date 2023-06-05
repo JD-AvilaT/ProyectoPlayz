@@ -1,4 +1,5 @@
-import { addObserver, appState } from "../../store";
+import { addObserver, appState, dispatch } from "../../store";
+import { GetFavorites } from "../../store/actions";
 import styles from "./favoriteslist.css"
 
 class FavoritesCards extends HTMLElement {
@@ -8,8 +9,13 @@ class FavoritesCards extends HTMLElement {
         addObserver(this)
     }
     
-    connectedCallback() {
+    async connectedCallback() {
+        if(appState.favorites.length ===0){
+        dispatch(await GetFavorites())
         this.render();
+    }else{
+        this.render()
+    }
     }
        
         render() {
