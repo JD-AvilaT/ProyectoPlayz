@@ -1,6 +1,8 @@
+
 import { addObserver, appState, dispatch } from "../../store";
 import { AddFavorite, GetPosts } from "../../store/actions";
 import { Post } from "../../types/post";
+import { User } from "../../types/users";
 import styles from "./publicationcard.css"
 
 const dataPost: Post = {
@@ -10,6 +12,14 @@ const dataPost: Post = {
     description: "",
     video: "",
     createdAt: "",
+}
+
+const dataFriend: User={
+        uid: "",
+      userName: "",
+      email: "",
+      password: "",
+      img: "",
 }
 
 class PublicationsCards extends HTMLElement {
@@ -44,6 +54,7 @@ class PublicationsCards extends HTMLElement {
                 imgProfile.src = appState.userData.img;
                 profile.appendChild(imgProfile);
                 dataPost.imgprofile = p.imgprofile
+                dataFriend.img = p.imgprofile
 
                 const userName = this.ownerDocument.createElement("h3");
                 userName.textContent = appState.userData.userName;
@@ -51,6 +62,7 @@ class PublicationsCards extends HTMLElement {
                 dataPost.username = p.username
                 dataPost.id = p.id
                 dataPost.createdAt = p.createdAt
+                dataFriend.userName = p.username
                 
                 const description = this.ownerDocument.createElement("p");
                 description.textContent = p.description;

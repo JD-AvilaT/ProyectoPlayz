@@ -158,9 +158,8 @@ const GetFavoritesListener = (cb: (docs: Post[]) => void) => {
 
   const AddFriendDB = async (friend: User) =>{
     try {
-      const main = collection(db, "users", appState.userData.uid)
-    const where = collection(main, "friends")
-      await addDoc(where,{...friend, createdAt: new Date()});
+      const main = collection(db, `users/${appState.userData.uid}/friends`)
+      await addDoc(main,{...friend, createdAt: new Date()});
       return true
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -171,8 +170,7 @@ const GetFavoritesListener = (cb: (docs: Post[]) => void) => {
 const GetFriendsDB = async(): Promise<User[]> =>{
     const resp: User[] = [];
 
-    const main = collection(db, "users", appState.userData.uid)
-    const q=query(collection(main,"friends"), orderBy("createdAt"))
+    const q=query(collection(db,`users/${appState.userData.uid}/friends`), orderBy("createdAt"))
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       console.log(`${doc.id} => ${doc.data()}`);
@@ -185,8 +183,7 @@ const GetFriendsDB = async(): Promise<User[]> =>{
 
 const GetFriendsListener = (cb: (docs: User[]) => void) => {
 
-  const main = collection(db, "users", appState.userData.uid)
-    const q = query(collection(main, "friends"), orderBy("createdAt")); 
+  const q=query(collection(db,`users/${appState.userData.uid}/friends`), orderBy("createdAt"))
     onSnapshot(q, (collection) => {
       const docs: User[] = collection.docs.map((doc) => ({
         uid: doc.id,
