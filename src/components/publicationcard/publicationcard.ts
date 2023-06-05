@@ -42,7 +42,7 @@ class PublicationsCards extends HTMLElement {
             if(this.shadowRoot) this.shadowRoot.innerHTML=""
             const container = this.ownerDocument.createElement('section');
 
-            appState.posts.forEach((p:any)=>{
+            appState.posts.forEach((p)=>{
                 const all = this.ownerDocument.createElement("section");
                 all.className = 'all';
 
@@ -51,13 +51,13 @@ class PublicationsCards extends HTMLElement {
                 all.appendChild(profile);
 
                 const imgProfile = this.ownerDocument.createElement("img");
-                imgProfile.src = appState.userData.img;
+                imgProfile.src = p.imgprofile;
                 profile.appendChild(imgProfile);
                 dataPost.imgprofile = p.imgprofile
                 dataFriend.img = p.imgprofile
 
                 const userName = this.ownerDocument.createElement("h3");
-                userName.textContent = appState.userData.userName;
+                userName.textContent = p.username;
                 profile.appendChild(userName);
                 dataPost.username = p.username
                 dataPost.id = p.id
