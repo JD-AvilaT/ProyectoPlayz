@@ -4,9 +4,9 @@ import { Post } from "../../types/post";
 import styles from "./playing.css"
 
 const post: Post = {
-    id:"",
-    imgprofile: "",
-    username: "",
+    id: appState.userData.uid,
+    imgprofile: appState.userData.img,
+    username: appState.userData.userName,
     description: "",
     video: "",
     createdAt: "",

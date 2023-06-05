@@ -17,6 +17,7 @@ import { appState } from "../store";
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+ 
 
 const registerUser = async ({
     email,
@@ -78,7 +79,6 @@ const GetPostsDB = async(): Promise<Post[]> =>{
     const q=query(collection(db,"posts"), orderBy("createdAt"))
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
       resp.push({
         ...doc.data()
       }as Post)

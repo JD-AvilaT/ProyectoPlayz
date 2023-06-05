@@ -2,7 +2,7 @@ import { User } from "firebase/auth";
 import { appState, dispatch } from "../../store";
 import { AddUser, Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
-import firebase from "../../utils/firebase";
+import firebase, { auth } from "../../utils/firebase";
 import styles from "./formreg.css"
 
 const credentials = {
