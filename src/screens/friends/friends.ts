@@ -1,7 +1,8 @@
 import "../../components/export"
-import Friends, { Attribute2 } from "../../components/friends/friends";
+import { dispatch } from "../../store";
+import { GetFriends } from "../../store/actions";
 
-import styles from "./favorites.css"
+import styles from "./friends.css"
 
 
 export default class AppFriends extends HTMLElement {
@@ -10,7 +11,8 @@ export default class AppFriends extends HTMLElement {
         this.attachShadow({ mode: "open" });
         }
 
-        connectedCallback() {
+         connectedCallback() {
+            //dispatch(await GetFriends())
             this.render();
         }
         
@@ -27,14 +29,9 @@ export default class AppFriends extends HTMLElement {
 
                 main.appendChild(navbar)
 
-                const friendsSection = this.ownerDocument.createElement("section")
+                const friendsSection = this.ownerDocument.createElement("my-friends")
                 friendsSection.className = 'friendsSection';
 
-                const friendCard = this.ownerDocument.createElement("my-friends")
-                
-                
-                
-                friendsSection.appendChild(friendCard)
                 main.appendChild(friendsSection)
 
                 this.shadowRoot?.appendChild(main)
@@ -43,4 +40,4 @@ export default class AppFriends extends HTMLElement {
         }
     }
     
-customElements.define("my-friends", Friends);
+customElements.define("app-friends", AppFriends);

@@ -1,8 +1,16 @@
 import "../../components/export"
-import PublicationsCards, { Attribute1 } from "../../components/publicationcards/publicationcards";
-
+import { appState, dispatch } from "../../store";
+import { GetPosts } from "../../store/actions";
+import firebase from "../../utils/firebase";
 import styles from "./index.css"
 
+const credentials = {
+    uid: appState.userData.uid,
+    userName: appState.userData.userName,
+    email: appState.userData.email,
+    password: appState.userData.password,
+    img: appState.userData.img,
+}
 
 export default class AppDashboard extends HTMLElement {
     constructor() {
@@ -10,10 +18,13 @@ export default class AppDashboard extends HTMLElement {
         this.attachShadow({ mode: "open" });
         }
 
-        connectedCallback() {
+         async connectedCallback() {
+            //dispatch(await GetPosts())
+            await firebase.AddUserDB(credentials)
             this.render();
         }
         
+
         render() {
             if (this.shadowRoot) {
                 const css = this.ownerDocument.createElement('style')
@@ -30,23 +41,8 @@ export default class AppDashboard extends HTMLElement {
                 main.appendChild(navbar)
                 main.appendChild(publicate)
 
-                const publicationsSection = this.ownerDocument.createElement("section")
+                const publicationsSection = this.ownerDocument.createElement("my-publications")
                 publicationsSection.className = 'publications';
-                
-                // publication.forEach((publication:any)=>{
-                //     const publicationCard = this.ownerDocument.createElement(
-                //         "my-publication"
-                //         ) as MyPublications;
-                //         publicationCard.setAttribute(Attribute1.imgprofile, publication.imgprofile);
-                //         publicationCard.setAttribute(Attribute1.name, publication.name);
-                //         publicationCard.setAttribute(Attribute1.username, publication.username);
-                //         publicationCard.setAttribute(Attribute1.description, publication.description);
-                //         publicationCard.setAttribute(Attribute1.video, publication.video);
-
-                 
-                //     publicationsSection.appendChild(publicationCard);
-                // })
-                
                 main.appendChild(publicationsSection)
 
                 this.shadowRoot?.appendChild(main)

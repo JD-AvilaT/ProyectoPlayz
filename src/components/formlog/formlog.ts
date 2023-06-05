@@ -1,13 +1,12 @@
 import { appState, dispatch } from "../../store";
-// import {LogIn} from "../../store/actions"
+import { Navigate} from "../../store/actions"
+import { Screens } from "../../types/store";
+import firebase from "../../utils/firebase";
 import styles from "./formlog.css"
 
 const credentials = {
-    id: appState.user.id,
-    userName: appState.user.userName,
     email: "",
     password: "",
-    img: appState.user.img,
 }
 
 export default class MyFormLog extends HTMLElement{
@@ -47,9 +46,9 @@ export default class MyFormLog extends HTMLElement{
 
         const sendbtn = this.ownerDocument.createElement("button")
         sendbtn.innerText = "Log in"
-        // sendbtn.addEventListener("click", async ()=>{
-        //     dispatch(await LogIn(credentials))
-        // })
+         sendbtn.addEventListener("click", async ()=>{
+             await firebase.loginUser(credentials)
+         })
 
         container.appendChild(email)
         container.appendChild(password)

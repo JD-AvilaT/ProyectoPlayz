@@ -33,34 +33,26 @@ class Friends extends HTMLElement{
     }
 
     render(){
-        if (this.shadowRoot){
 
-            const css = this.ownerDocument.createElement('style')
-        css.innerHTML = styles
-        this.shadowRoot?.appendChild(css)
-
+        appState.friends.forEach((p)=>{
+            
         const container = this.ownerDocument.createElement("section")
 
         const imgprofile = this.ownerDocument.createElement("img")
-        imgprofile.src = appState.user.img
+        imgprofile.src = p.img
 
         const username = this.ownerDocument.createElement("p")
-        username.textContent = appState.user.userName
-
-            //delete action
-
-        const sendbtn = this.ownerDocument.createElement("button")
-        sendbtn.addEventListener("click", async ()=>{
-            dispatch(await AddPost(post))
-        })
+        username.textContent = p.userName
 
         container.appendChild(imgprofile)
         container.appendChild(username)
-        container.appendChild(sendbtn)
 
         this.shadowRoot?.appendChild(container)
-        
-        }
+        })
+
+        const css = this.ownerDocument.createElement('style')
+        css.innerHTML = styles
+        this.shadowRoot?.appendChild(css)
     }
 }
 

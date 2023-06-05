@@ -39,10 +39,10 @@ export default class AppRegister extends HTMLElement {
             const form = this.ownerDocument.createElement('section');
             form.className = "form"
 
-            const campsForm = this.ownerDocument.createElement("form-register");
+            const campsForm = this.ownerDocument.createElement("form-register")
 
             const account = this.ownerDocument.createElement('button');
-            account.innerText = 'Have already an account?';
+            account.innerText = 'Already have an account?';
             account.addEventListener("click", ()=>{
                 dispatch(Navigate(Screens.LOGIN))
             })
@@ -54,8 +54,6 @@ export default class AppRegister extends HTMLElement {
             container.appendChild(intro);
             container.appendChild(form);
             this.shadowRoot?.appendChild(container);
-
-
         }
     }
 }
