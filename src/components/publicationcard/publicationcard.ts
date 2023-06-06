@@ -35,34 +35,36 @@ class PublicationsCards extends HTMLElement {
                 const imgProfile = this.ownerDocument.createElement("img");
                 imgProfile.src = appState.posts[i].imgprofile;
                 profile.appendChild(imgProfile);
-                dataPost.imgprofile = appState.posts[i].imgprofile
-                dataFriend.img = appState.posts[i].imgprofile
+                
 
                 const userName = this.ownerDocument.createElement("h3");
                 userName.textContent = appState.posts[i].username;
                 profile.appendChild(userName);
-                dataPost.username = appState.posts[i].username
-                dataPost.id = appState.posts[i].id
-                dataPost.createdAt = appState.posts[i].createdAt
-                dataFriend.userName = appState.posts[i].username
+                
 
                 const follow = this.ownerDocument.createElement("button");
                 follow.innerText = "Add Friend"
-                follow.addEventListener("click",async()=>{
-                    dispatch(await AddFriend(dataFriend))
-                })
                 profile.appendChild(follow)
+                follow.onclick = async function () {
+                    dispatch(await AddFriend({
+                        uid: "",
+                     userName: appState.posts[i].username,
+                     email: "",
+                    password: "",
+                    img: appState.posts[i].imgprofile,
+                    }))
+                }
 
                 
                 const description = this.ownerDocument.createElement("p");
                 description.textContent = appState.posts[i].description;
                 all.appendChild(description);
-                dataPost.description = appState.posts[i].description
+                
 
                 const video = this.ownerDocument.createElement("iframe");
                 video.src = appState.posts[i].video
                 all.appendChild(video);
-                dataPost.video = appState.posts[i].video
+                
                 
                 const likeAppart = this.ownerDocument.createElement("section");
                 likeAppart.className = "likeAppart";
@@ -84,7 +86,7 @@ class PublicationsCards extends HTMLElement {
                 save.addEventListener("click",async()=>{
                     dispatch(await AddFavorite(appState.posts[i]))
                 })
-                likeAppart.appendChild(save);
+                
 
                 container.appendChild(all)
             }
