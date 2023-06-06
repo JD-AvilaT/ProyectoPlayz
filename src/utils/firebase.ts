@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot, where, setDoc, doc} from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot, where, setDoc, doc, getDoc} from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -110,6 +110,13 @@ const AddUserDB = async (user: any) =>{
   }
 }
 
+const GetUserDB = async() =>{
+  const docRef = doc(db, "users", appState.userData.uid);
+  const docSnap = await getDoc(docRef);
+
+  return docSnap
+}
+
 const EditUserDB = async (user: any) =>{
   try {
     await setDoc (doc(db, "users", user.uid), user)
@@ -210,5 +217,6 @@ export default{
     GetFriendsDB,
     GetFriendsListener,
     AddUserDB,
+    GetUserDB,
     onAuthStateChanged,
 }

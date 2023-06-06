@@ -1,5 +1,5 @@
 import { Navigate } from "../../store/actions";
-import { dispatch } from "../../store/index";
+import { appState, dispatch } from "../../store/index";
 import { Screens } from "../../types/store";
 import styles from "./navbar.css"
 
@@ -66,7 +66,7 @@ class Navbar extends HTMLElement{
              })
 
             const profileImg = this.ownerDocument.createElement("img")
-            profileImg.src = "../src/imgs/avila.jpg"
+            profileImg.src = appState.userData.img
 
 
             profilebtn.appendChild(profileImg)
