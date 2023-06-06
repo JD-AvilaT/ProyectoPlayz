@@ -18,6 +18,10 @@
     gap: 50px;
 }
 
+.inputs input{
+    color: white;
+}
+
 .description{
     text-align: center;
     background-color: transparent;
@@ -40,6 +44,12 @@
     flex-direction: row;
 }
 
+.up img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
 .down button{
     background-color: rgb(53, 212, 117);
     text-align: center;
@@ -52,8 +62,17 @@
 
 @media screen and (max-width: 400px){
 
+    .container{
+        width: 400px;
+    }
+
     .description{
-        font-size: 30px;
+        font-size: 20px;
     }
     
+    .up img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
 }

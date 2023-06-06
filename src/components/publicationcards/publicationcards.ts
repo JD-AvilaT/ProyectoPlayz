@@ -61,11 +61,11 @@ class PublicationsCards extends HTMLElement {
                 all.appendChild(profile);
 
                 const imgProfile = this.ownerDocument.createElement("img");
-                imgProfile.src = appState.user.img;
+                imgProfile.src = appState.userData.img;
                 profile.appendChild(imgProfile);
 
                 const userName = this.ownerDocument.createElement("h3");
-                userName.textContent = appState.user.userName;
+                userName.textContent = appState.userData.userName;
                 profile.appendChild(userName);
                 
                 const description = this.ownerDocument.createElement("p");
