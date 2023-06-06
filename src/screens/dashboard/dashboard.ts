@@ -19,7 +19,6 @@ export default class AppDashboard extends HTMLElement {
         }
 
          async connectedCallback() {
-            //dispatch(await GetPosts())
             await firebase.AddUserDB(credentials)
             this.render();
         }

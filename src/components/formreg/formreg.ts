@@ -2,7 +2,7 @@ import { User } from "firebase/auth";
 import { appState, dispatch } from "../../store";
 import { AddUser, Navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
-import firebase from "../../utils/firebase";
+import firebase, { auth } from "../../utils/firebase";
 import styles from "./formreg.css"
 
 const credentials = {
@@ -27,9 +27,19 @@ export default class MyFormReg extends HTMLElement{
         if(this.shadowRoot){ 
         this.shadowRoot.innerHTML = '';
 
+        const container = this.ownerDocument.createElement('section')
+        this.shadowRoot?.appendChild(container)
+
         const css = this.ownerDocument.createElement('style')
         css.innerHTML = styles
         this.shadowRoot?.appendChild(css)
+
+        const userImg = this.ownerDocument.createElement("input")
+        userImg.placeholder = "Your picture"
+        userImg.type = "url"
+        userImg.addEventListener("change", (e:any)=>{
+            credentials.img = e.target.value
+        })
 
         const userName = this.ownerDocument.createElement("input")
         userName.placeholder = "Username"
@@ -64,10 +74,11 @@ export default class MyFormReg extends HTMLElement{
             }
         })
 
-        this.shadowRoot?.appendChild(userName)
-        this.shadowRoot?.appendChild(email)
-        this.shadowRoot?.appendChild(password)
-        this.shadowRoot?.appendChild(sendbtn)
+        container.appendChild(userName)
+        container.appendChild(email)
+        container.appendChild(password)
+        container.appendChild(userImg)
+        container.appendChild(sendbtn)
 
         }
     }

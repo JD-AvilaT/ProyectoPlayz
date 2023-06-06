@@ -31,10 +31,12 @@ export default class AppLogin extends HTMLElement {
             intro.className = "intro"
 
             const hello = this.ownerDocument.createElement("h1");
+            hello.className = "hello";
             hello.textContent = "Hello,";
 
             const gamer = this.ownerDocument.createElement("h1");
-            hello.textContent = "gamer.";
+            gamer.className = "gamer";
+            gamer.textContent = "gamer.";
 
             const form = this.ownerDocument.createElement('section');
             form.className = "form"
