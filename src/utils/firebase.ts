@@ -1,12 +1,13 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot, where, setDoc, doc} from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs, orderBy, query, onSnapshot, where, setDoc, doc, getDoc} from "firebase/firestore";
 import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
   setPersistence,
   browserSessionPersistence,
-  onAuthStateChanged
+  onAuthStateChanged,
+  UserCredential
 } from "firebase/auth";
 
 import { Post } from "../types/post";
@@ -25,19 +26,19 @@ const registerUser = async ({
   }: {
     email: string;
     password: string;
-  }): Promise<boolean> => {
+  }): Promise<UserCredential> => {
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
         password
       );
-      return true;
+      return userCredential;
     } catch (error: any) {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(errorCode, errorMessage);
-      return false;
+      return error;
     }
   };
 
@@ -100,12 +101,20 @@ const GetPostsListener = (cb: (docs: Post[]) => void) => {
 
 const AddUserDB = async (user: any) =>{
   try {
+    user.uid = appState.userCredentials
     await setDoc(doc(db, "users", user.uid), user)
     return true
   } catch (e) {
     console.error("Error adding document: ", e);
     return false
   }
+}
+
+const GetUserDB = async() =>{
+  const docRef = doc(db, "users", appState.userData.uid);
+  const docSnap = await getDoc(docRef);
+
+  return docSnap
 }
 
 const EditUserDB = async (user: any) =>{
@@ -208,5 +217,6 @@ export default{
     GetFriendsDB,
     GetFriendsListener,
     AddUserDB,
+    GetUserDB,
     onAuthStateChanged,
 }

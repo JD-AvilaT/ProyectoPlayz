@@ -66,10 +66,11 @@ export default class MyFormReg extends HTMLElement{
         sendbtn.innerText = "Register"
         sendbtn.addEventListener("click", async ()=>{
             const user = await firebase.registerUser(credentials)
-            dispatch(AddUser(credentials))
             console.log(user);
+            credentials.uid = user.user.uid
+            dispatch(await AddUser(credentials))
             if(user){
-                dispatch(Navigate(Screens.LOGIN))
+                dispatch(Navigate(Screens.DASHBOARD))
                 sessionStorage.clear()
             }
         })

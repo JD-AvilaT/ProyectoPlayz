@@ -54,7 +54,7 @@ export default class AppProfile extends HTMLElement {
             form.className = "form"
 
             const userName = this.ownerDocument.createElement("input");
-            userName.placeholder = "Change your username"
+            userName.placeholder = appState.userData.userName
             userName.addEventListener("change", (e:any)=>credentials.userName = e.target.value);
             form.appendChild(userName);
 

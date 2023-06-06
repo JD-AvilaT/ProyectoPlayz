@@ -25,10 +25,6 @@
     font-size: 50px;
 }
 
-.up img{
-    border-radius: 50%;
-}
-
 .videoLink{
     background-color: rgb(129, 39, 185);
     color: white;
@@ -42,7 +38,6 @@
 .up{
     display: flex;
     flex-direction: row;
-    align-items: center;
 }
 
 .down button{

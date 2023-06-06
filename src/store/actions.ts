@@ -11,7 +11,9 @@ export const Navigate = (screen:Screens): NavigationAction =>{
     }
 }
 
-export const AddUser = (user:User): AddUserAction =>{
+export const AddUser = async (user:User): Promise<AddUserAction> =>{
+
+    await firebase.AddUserDB(user)
 
     return{
         action: UserActions.ADD_USER,
@@ -106,6 +108,7 @@ export const GetFavorites = async (): Promise<GetFavoritesAction> =>{
 
 export const AddFriend = async (friend:User): Promise<AddFriendAction> =>{
 
+    console.log(friend)
     await firebase.AddFriendDB(friend)
 
     return{
