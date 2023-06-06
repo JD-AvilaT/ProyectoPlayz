@@ -1,3 +1,10 @@
+.container{
+    background-color: rgb(27, 27, 27);
+    overflow: scroll;
+    height: 760px;
+    width: 1080px;
+}
+
 .all{
     display: flex;
     flex-direction: column;
@@ -84,7 +91,7 @@ section iframe{
 
     .container{
         background-color:  rgb(27, 27, 27);
-        width: 100vw;
+        width: 400px;
     }
 
     .all{

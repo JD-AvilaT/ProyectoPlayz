@@ -64,10 +64,6 @@ section{
 
 @media screen and (max-width: 400px){
 
-    .profile{
-        display: none;
-    }
-
     .logo{
         height: 65px;
         margin-left: 10px;
@@ -86,6 +82,13 @@ section{
         background-color: transparent;
         border: none;
         font-size: 18px;
+    }
+
+    .profileImg{
+        width: 50px;
+        min-height: 50px;
+        max-height: 50px;
+        margin: 15px;
     }
     
 }

@@ -10,7 +10,7 @@
     border-top: none;
 }
 
-.all section{
+.profile{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -63,7 +63,7 @@ section iframe{
 
 .likeAppart{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     margin-top: 5%;
 }
