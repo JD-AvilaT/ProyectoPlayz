@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 .card{
@@ -15,10 +15,17 @@
     border-left: none;
     border-right: none;
     border-top: none;
+    gap: 50px;
 }
 
 h3{
     color: rgb(53, 212, 117);
+}
+
+img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
 }
 
 @media screen and (max-width: 400px){
@@ -32,7 +39,7 @@ h3{
     }
 
     .card{
-        width: 300px;
+        width: 400px;
     }
     
 }

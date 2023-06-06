@@ -1,4 +1,3 @@
-
 import { addObserver, appState, dispatch } from "../../store";
 import { AddFavorite, AddFriend, GetPosts } from "../../store/actions";
 import styles from "./publicationcard.css"

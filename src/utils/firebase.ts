@@ -113,9 +113,23 @@ const AddUserDB = async (user: any) =>{
 const GetUserDB = async() =>{
   const docRef = doc(db, "users", appState.userData.uid);
   const docSnap = await getDoc(docRef);
-
+  console.log(docSnap)
   return docSnap
 }
+
+// const GetUser = async(): Promise<User> =>{
+//   const resp: User[] = [];
+
+//   const q=query(collection(db, "users", appState.userCredentials))
+//   const querySnapshot = await getDocs(q);
+//   querySnapshot.forEach((doc) => {
+//     console.log(`${doc.id} => ${doc.data()}`);
+//     resp.push({
+//       ...doc.data()
+//     }as Post)
+//   });
+//   return resp
+// }
 
 const EditUserDB = async (user: any) =>{
   try {

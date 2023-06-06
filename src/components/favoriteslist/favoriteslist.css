@@ -1,16 +1,16 @@
 .all{
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
+    margin-top: 3%;
     width: 800px;
     border: rgba(188, 188, 188, 0.53) 1px solid;
-    padding: 10%;
+    padding: 5%;
     border-left: none;
     border-right: none;
     border-top: none;
 }
 
-.all section{
+.profile{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -19,6 +19,8 @@
 
 .profile img{
     height: 80px;
+    min-width: 80px;
+    max-width: 80px;
     border-radius: 50%;
 }
 
@@ -63,7 +65,7 @@ section iframe{
 
 .likeAppart{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     margin-top: 5%;
 }
@@ -93,6 +95,8 @@ section iframe{
 
     .profile img{
         height: 40px;
+        min-width: 40px;
+        max-width: 40px;
     }
 
     .all iframe{

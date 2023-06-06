@@ -3,7 +3,7 @@ import { Actions, AppState, Observer, Screens } from "../types/store";
 import { reducer } from "./reducer";
 import firebase, { auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { Navigate, SetUserCredentials } from "./actions";
+import {  Navigate, SetUserCredentials } from "./actions";
 
 onAuthStateChanged(auth, async(user) => {
   console.log(user)

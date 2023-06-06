@@ -66,6 +66,7 @@ class Navbar extends HTMLElement{
              })
 
             const profileImg = this.ownerDocument.createElement("img")
+            profileImg.className = "profileImg"
             profileImg.src = appState.userData.img
 
 

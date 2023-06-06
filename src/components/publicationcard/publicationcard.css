@@ -1,10 +1,17 @@
+.container{
+    background-color: rgb(27, 27, 27);
+    overflow-y: scroll;
+    height: 380px;
+    width: 1080px;
+}
+
 .all{
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
+    margin-top: 10px;
     width: 800px;
     border: rgba(188, 188, 188, 0.53) 1px solid;
-    padding: 10%;
+    padding: 3%;
     border-left: none;
     border-right: none;
     border-top: none;
@@ -18,7 +25,9 @@
 }
 
 .profile img{
-    height: 80px;
+    height: 70px;
+    min-width: 70px;
+    max-width: 70px;
     border-radius: 50%;
 }
 
@@ -84,7 +93,7 @@ section iframe{
 
     .container{
         background-color:  rgb(27, 27, 27);
-        width: 100vw;
+        width: 400px;
     }
 
     .all{
@@ -93,6 +102,8 @@ section iframe{
 
     .profile img{
         height: 40px;
+        min-width: 40px;
+        max-width: 40px;
     }
 
     .all iframe{

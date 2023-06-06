@@ -12,6 +12,7 @@ export default class AppDashboard extends HTMLElement {
         }
 
         connectedCallback() {
+            //dispatch(await GetUser())
             this.render();
         }
         
