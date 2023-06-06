@@ -9,16 +9,18 @@
 .editProfile{
     background-color: rgb(27, 27, 27);
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10%;
-    margin-top: 150px;
+    gap: 30px;
+    margin-top: 10px;
 
 }
 
 .editProfile img{
     border-radius: 50%;
+    width: 200px;
+    height: 200px;
 }
 
 .form{
@@ -46,6 +48,16 @@
     font-size: large;
 }
 
+input{
+    padding: 5px;
+    text-align: center;
+    background-color: black;
+    color: rgb(129, 39, 185);
+    border-radius: 10px;
+    border: 0;
+}
+
+
 @media screen and (max-width: 400px){
     .container{
         display: flex;
@@ -62,5 +74,6 @@
 
     .editProfile img{
         height: 250px;
+        width: 250px;
     }
 }

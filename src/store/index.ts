@@ -3,12 +3,13 @@ import { Actions, AppState, Observer, Screens } from "../types/store";
 import { reducer } from "./reducer";
 import firebase, { auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { Navigate, SetUserCredentials } from "./actions";
+import {  GetUser, Navigate, SetUserCredentials } from "./actions";
 
-onAuthStateChanged(auth, async(user:any) => {
+onAuthStateChanged(auth, async(user) => {
   console.log(user)
   if (user) {
-    appState.userCredentials !== null ? dispatch(SetUserCredentials(user)): '';
+    appState.userCredentials !== null ? dispatch(SetUserCredentials(user.uid)): '';
+    dispatch(await GetUser())
     appState.userData.uid = user.uid
     appState.userData.email = String(user.email)
     dispatch(Navigate(Screens.DASHBOARD));

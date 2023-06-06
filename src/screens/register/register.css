@@ -1,22 +1,54 @@
-section{
+.container{
+    font-family: sans-serif;
     background-color: rgb(27, 27, 27);
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    font-family: sans-serif;
-    height: 100vh;
+    gap: 50px;
 }
 
-section my-input{
-    text-align: center;
+.intro{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 100px;
 }
 
-section button{
+.hello{
+    color: white;
+}
+
+.gamer{
     color: rgb(53, 212, 117);
-    border: 0;
-    background: transparent;
-    font-family: sans-serif;
+}
 
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.form button{
+    background-color: transparent;
+    border: 0;
+    color: rgb(53, 212, 117);
+}
+
+@media screen and (max-width: 400px){
+
+    
+
+    .intro{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .intro h1{
+        font-size: 50px;
+    }
+    
 }

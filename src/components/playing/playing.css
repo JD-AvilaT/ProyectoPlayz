@@ -1,61 +1,78 @@
-section{
+.container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 25%;
     margin: auto;
+    gap: 20px;
+    font-family: sans-serif;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 50px;
+}
+
+.inputs input{
+    color: white;
+}
+
+.description{
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    font-size: 25px;
+}
+
+.videoLink{
+    background-color: rgb(129, 39, 185);
+    color: white;
+    text-align: center;
+    width: 200px;
+    padding: 5px;
+    border: 0;
+    border-radius: 10px;
 }
 
 .up{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 5%;
 }
 
 .up img{
+    width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
-.up input{
-    background-color: transparent;
-    font-size: 50px;
-    color: rgb(78, 78, 78);
-    border: 0;
-}
-
-button{
+.down button{
     background-color: rgb(53, 212, 117);
+    text-align: center;
+    width: 100px;
     border: 0;
-    width: 50%;
+    border-radius: 10px;
     color: white;
-    border-radius: 15px;
+    font-size: large;
 }
 
 @media screen and (max-width: 400px){
-    section{
-        width: 80%;
-        gap: 30px;
-        margin-top: 5%;
+
+    .container{
+        width: 400px;
     }
 
-    .up{
-        gap: 5%;
+    .description{
+        font-size: 20px;
     }
-
+    
     .up img{
-        height: 40px;
-    }
-
-    .up input{
-        font-size: 22px;
-        width: 80%;
-    }
-
-    button{
-        width: 40%;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
     }
 }

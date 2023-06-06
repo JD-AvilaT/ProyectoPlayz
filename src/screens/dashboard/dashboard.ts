@@ -4,13 +4,6 @@ import { GetPosts } from "../../store/actions";
 import firebase from "../../utils/firebase";
 import styles from "./index.css"
 
-const credentials = {
-    uid: appState.userData.uid,
-    userName: appState.userData.userName,
-    email: appState.userData.email,
-    password: appState.userData.password,
-    img: appState.userData.img,
-}
 
 export default class AppDashboard extends HTMLElement {
     constructor() {
@@ -18,9 +11,8 @@ export default class AppDashboard extends HTMLElement {
         this.attachShadow({ mode: "open" });
         }
 
-         async connectedCallback() {
-            //dispatch(await GetPosts())
-            await firebase.AddUserDB(credentials)
+        connectedCallback() {
+            //dispatch(await GetUser())
             this.render();
         }
         

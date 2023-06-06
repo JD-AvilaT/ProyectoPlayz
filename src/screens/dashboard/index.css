@@ -3,6 +3,8 @@
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    height: 100vh;
+    margin: 0;
 }
 
 .publications{
@@ -12,7 +14,11 @@
 }
 
 @media screen and (max-width: 400px){
+
+    .main{
+        width: 400px;
+    }
     .publications{
-        width: 100%;
+        width: 400px;
     }
 }

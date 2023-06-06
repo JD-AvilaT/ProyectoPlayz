@@ -1,6 +1,7 @@
+import { onAuthStateChanged } from "firebase/auth"
 import { appState, dispatch } from "."
 import { Post } from "../types/post"
-import {  Actions, UserActions, PostActions, NavigationActions, FriendsActions, AddUserAction, LogOutAction, AddFavoriteAction, AddFriendAction, NavigationAction, Screens, EditAction, GetFriendsAction, GetFavoritesAction, GetPostsAction, AddPostAction, SetUserAction } from "../types/store"
+import {  Actions, UserActions, PostActions, NavigationActions, FriendsActions, AddUserAction, LogOutAction, AddFavoriteAction, AddFriendAction, NavigationAction, Screens, EditAction, GetFriendsAction, GetFavoritesAction, GetPostsAction, AddPostAction, SetUserAction, GetUserAction } from "../types/store"
 import { User } from "../types/users"
 import firebase from "../utils/firebase"
 
@@ -11,7 +12,9 @@ export const Navigate = (screen:Screens): NavigationAction =>{
     }
 }
 
-export const AddUser = (user:User): AddUserAction =>{
+export const AddUser = async (user:User): Promise<AddUserAction> =>{
+
+    await firebase.AddUserDB(user)
 
     return{
         action: UserActions.ADD_USER,
@@ -19,13 +22,33 @@ export const AddUser = (user:User): AddUserAction =>{
     }
 }
 
+export const GetUser = async (): Promise<GetUserAction> =>{
+
+    onAuthStateChanged
+     const user = await firebase.GetUserDB()
+
+     return{
+         action: UserActions.GET_USER,
+         payload: user,
+     }
+ }
+
 export const LogOut =  ():LogOutAction =>{
 
     if(appState.userCredentials !==null || ''){
-    dispatch(SetUserCredentials(''))    
+    dispatch(SetUserCredentials(''))
+    appState.posts =[]
+    appState.favorites=[]
+    appState.friends=[]
+    appState.userData={
+        uid: "",
+      userName: "",
+      email: "",
+      password: "",
+      img: "",
+    }    
     sessionStorage.clear()
     dispatch(Navigate(Screens.LOGIN))
-    location.reload()
 }
 
     return{
@@ -97,6 +120,7 @@ export const GetFavorites = async (): Promise<GetFavoritesAction> =>{
 
 export const AddFriend = async (friend:User): Promise<AddFriendAction> =>{
 
+    console.log(friend)
     await firebase.AddFriendDB(friend)
 
     return{

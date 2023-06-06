@@ -7,7 +7,11 @@ export const reducer = (Action: Actions, State: AppState): AppState => {
         case UserActions.ADD_USER:
             State.userData = payload
             return State
-            
+        
+        case UserActions.GET_USER:
+             State.userData = payload
+             return State
+
         case UserActions.LOGOUT: 
             return {
                 ...State , userCredentials:""

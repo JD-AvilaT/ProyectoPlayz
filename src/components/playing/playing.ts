@@ -4,9 +4,9 @@ import { Post } from "../../types/post";
 import styles from "./playing.css"
 
 const post: Post = {
-    id:"",
-    imgprofile: "",
-    username: "",
+    id: appState.userData.uid,
+    imgprofile: appState.userData.img,
+    username: appState.userData.userName,
     description: "",
     video: "",
     createdAt: "",
@@ -32,11 +32,27 @@ class Playing extends HTMLElement{
         this.shadowRoot?.appendChild(css)
 
         const container = this.ownerDocument.createElement("section")
+        container.className = "container"
+
+        const up = this.ownerDocument.createElement("section")
+        up.className = "up"
+        up.className = "up"
+
+        const inputs = this.ownerDocument.createElement("section")
+        inputs.className = "inputs"
+        inputs.className = "inputs"
+
+        const down = this.ownerDocument.createElement("section")
+        down.className = "down"
+        down.className = "down"
+
+        
 
         const imgprofile = this.ownerDocument.createElement("img")
         imgprofile.src = appState.userData.img
 
         const descriptionPost = this.ownerDocument.createElement("input")
+        descriptionPost.className = "description"
         descriptionPost.placeholder = "What are you playing?"
         descriptionPost.type = "text"
         descriptionPost.addEventListener("change", (e:any)=>{
@@ -44,6 +60,7 @@ class Playing extends HTMLElement{
         })
 
         const videoLink = this.ownerDocument.createElement("input")
+        videoLink.className = "videoLink"
         videoLink.placeholder = "Your embed youtube video here"
         videoLink.type = "text"
         videoLink.addEventListener("change", (e:any)=>{
@@ -51,19 +68,19 @@ class Playing extends HTMLElement{
         })
 
         const sendbtn = this.ownerDocument.createElement("button")
-        sendbtn.textContent=`<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M12 5l0 14"></path>
-        <path d="M5 12l14 0"></path>
-     </svg>`;
+        sendbtn.textContent = "+"
         sendbtn.addEventListener("click", async ()=>{
             dispatch(await AddPost(post))
         })
 
-        container.appendChild(imgprofile)
-        container.appendChild(descriptionPost)
-        container.appendChild(videoLink)
-        container.appendChild(sendbtn)
+        inputs.appendChild(descriptionPost)
+        inputs.appendChild(videoLink)
+        up.appendChild(imgprofile)
+        up.appendChild(inputs)
+        down.appendChild(sendbtn)
+
+        container.appendChild(up)
+        container.appendChild(down)
 
         this.shadowRoot?.appendChild(container)
         
