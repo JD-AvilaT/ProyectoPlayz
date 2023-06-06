@@ -50,15 +50,7 @@ section{
     border-radius: 50%;
 }
 
-.home{
-    color: rgb(53, 212, 117);
-    text-decoration: none;
-    background-color: transparent;
-    border: none;
-    font-size: 20px;
-}
-
-.games, .friends, .saved{
+.home, .friends, .saved{
     color: white;
     text-decoration: none;
     background-color: transparent;
@@ -66,7 +58,7 @@ section{
     font-size: 20px;
 }
 
-.home:hover, .games:hover, .friends:hover, .saved:hover{
+.home:hover, .friends:hover, .saved:hover{
     color: rgb(53, 212, 117);
 }
 
@@ -87,16 +79,8 @@ section{
         font-size: 18px;
         gap: 14px;
     }
-
-    .home{
-        color: rgb(53, 212, 117);
-        text-decoration: none;
-        background-color: transparent;
-        border: none;
-        font-size: 18px;
-    }
     
-    .games, .friends, .saved{
+    .home, .friends, .saved{
         color: white;
         text-decoration: none;
         background-color: transparent;
