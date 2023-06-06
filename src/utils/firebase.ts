@@ -110,26 +110,26 @@ const AddUserDB = async (user: any) =>{
   }
 }
 
-const GetUserDB = async() =>{
-  const docRef = doc(db, "users", appState.userData.uid);
+
+const GetUserDB = async(): Promise<User> =>{
+  let resp: User ={
+    uid: "",
+    userName: "",
+    email: "",
+    img: "",
+    password: "",
+  };
+  const docRef = doc(db, "users", appState.userCredentials);
+
   const docSnap = await getDoc(docRef);
-  console.log(docSnap)
-  return docSnap
+
+  if (docSnap.exists()) {
+    resp = (docSnap.data() as User);
+  } else {
+    console.log("No such document!");
+  }
+  return  resp
 }
-
-// const GetUser = async(): Promise<User> =>{
-//   const resp: User[] = [];
-
-//   const q=query(collection(db, "users", appState.userCredentials))
-//   const querySnapshot = await getDocs(q);
-//   querySnapshot.forEach((doc) => {
-//     console.log(`${doc.id} => ${doc.data()}`);
-//     resp.push({
-//       ...doc.data()
-//     }as Post)
-//   });
-//   return resp
-// }
 
 const EditUserDB = async (user: any) =>{
   try {
