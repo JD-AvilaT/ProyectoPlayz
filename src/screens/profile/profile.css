@@ -13,14 +13,14 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    margin-top: 150px;
+    margin-top: 10px;
 
 }
 
 .editProfile img{
     border-radius: 50%;
-    width: 500px;
-    height: 500px;
+    width: 200px;
+    height: 200px;
 }
 
 .form{
