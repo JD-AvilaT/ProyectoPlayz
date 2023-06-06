@@ -27,13 +27,16 @@ export default class MyFormReg extends HTMLElement{
         if(this.shadowRoot){ 
         this.shadowRoot.innerHTML = '';
 
+        const container = this.ownerDocument.createElement('section')
+        this.shadowRoot?.appendChild(container)
+
         const css = this.ownerDocument.createElement('style')
         css.innerHTML = styles
         this.shadowRoot?.appendChild(css)
 
         const userImg = this.ownerDocument.createElement("input")
         userImg.placeholder = "Your picture"
-        userImg.type = "text"
+        userImg.type = "url"
         userImg.addEventListener("change", (e:any)=>{
             credentials.img = e.target.value
         })
@@ -71,10 +74,11 @@ export default class MyFormReg extends HTMLElement{
             }
         })
 
-        this.shadowRoot?.appendChild(userName)
-        this.shadowRoot?.appendChild(email)
-        this.shadowRoot?.appendChild(password)
-        this.shadowRoot?.appendChild(sendbtn)
+        container.appendChild(userName)
+        container.appendChild(email)
+        container.appendChild(password)
+        container.appendChild(userImg)
+        container.appendChild(sendbtn)
 
         }
     }

@@ -28,15 +28,17 @@ class Friends extends HTMLElement{
         this.shadowRoot?.appendChild(css)
 
         const container = this.ownerDocument.createElement("section")
+        container.className = "container"
 
         appState.friends.forEach((p)=>{
             
             const card = this.ownerDocument.createElement("section")
+            card.className = "card"
     
             const imgprofile = this.ownerDocument.createElement("img")
             imgprofile.src = p.img
     
-            const username = this.ownerDocument.createElement("p")
+            const username = this.ownerDocument.createElement("h3")
             username.textContent = p.userName
     
             card.appendChild(imgprofile)

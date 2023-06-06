@@ -1,0 +1,22 @@
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 800px;
+    border: rgba(188, 188, 188, 0.53) 1px solid;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+h3{
+    color: rgb(53, 212, 117);
+}
